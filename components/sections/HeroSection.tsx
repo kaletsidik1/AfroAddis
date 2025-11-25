@@ -43,17 +43,19 @@ export function HeroSection() {
 
       <div className="relative grid items-stretch gap-12 px-6 py-12 md:grid-cols-[minmax(0,1.2fr)_minmax(0,0.9fr)] sm:px-10 sm:py-16 lg:px-16">
         <div className="space-y-8">
-          <div className="inline-flex items-center gap-2 rounded-full border border-white/20 px-4 py-1 text-xs font-semibold uppercase tracking-[0.35em] text-amber-200">
-            Afro Addis Group · Ethiopia
+          <div className="inline-flex items-center gap-2 rounded border border-white/20 px-4 py-1 font-semibold uppercase tracking-[0.35em] bg-red-700">
+            Afro Addis · Ethiopia
           </div>
           <div className="space-y-4">
-            <h1 className="text-balance text-4xl font-semibold tracking-tight text-white sm:text-5xl lg:text-6xl">
-              Empowering global trade from Ethiopia to the world.
+            <h1 className="text-balance text-4xl font-serif  text-gray-100 sm:text-4xl lg:text-4xl">
+              Transforming Trade, Manufacturing, and Export for a Better Future
             </h1>
-            <p className="max-w-2xl text-base text-slate-100 sm:text-lg">
-              A multi-sector enterprise scaling import, export, manufacturing, coffee trade, and household retail
-              programs with governance built for international partners.
-            </p>
+            <p className="max-w-2xl text-base text-gray-100 font-sans sm:text-lg">
+                A multi-sector enterprise transforming Ethiopia’s economy through 
+                advanced trading and retail systems, flexible credit access, global standard
+                 import and export operations, and high-quality local manufacturing all
+                  delivered with strong governance and international partnerships.  
+                </p>
           </div>
 
           <div className="flex flex-wrap gap-2">
@@ -72,7 +74,7 @@ export function HeroSection() {
               href="/divisions"
               className="inline-flex items-center justify-center rounded-full bg-white px-6 py-3 text-sm font-semibold text-gray-900 transition hover:scale-[1.01]"
             >
-              Explore our divisions
+              Explore our services
             </Link>
             <Link
               href="/resources#downloads"
@@ -85,7 +87,7 @@ export function HeroSection() {
           <dl className="grid gap-5 text-sm text-white/80 sm:grid-cols-4">
             {stats.map((stat) => (
               <div key={stat.label}>
-                <dt className="text-xs uppercase tracking-[0.35em] text-white/60">{stat.label}</dt>
+                <dt className=" uppercase  text-white">{stat.label}</dt>
                 <dd className="mt-2 text-2xl font-semibold text-white">{stat.value}</dd>
               </div>
             ))}
@@ -116,7 +118,7 @@ export function HeroSection() {
             </div>
             <div className="mt-4 border border-white/10 bg-white/5 p-4">
               <p className="text-xs uppercase tracking-[0.3em] text-white/70">Integrated capability</p>
-              <p className="mt-2 text-sm text-white/90">Coffee export · Import & retail · Manufacturing · Global logistics</p>
+              <p className="mt-2 text-sm text-white/90">Trading · Import & retail · Manufacturing · Global logistics</p>
             </div>
           </div>
 

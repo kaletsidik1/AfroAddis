@@ -102,11 +102,6 @@ export const megaMenuGroups: MegaMenuGroup[] = [
       ],
     },
   ],
-  highlight: {
-    title: "View Full Product Range",
-    description: "Explore our complete import and manufacturing portfolio.",
-    href: "/products#catalog",
-  },
 },
   {
     label: "Partners & Resources",

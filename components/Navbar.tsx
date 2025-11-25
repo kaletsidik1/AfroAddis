@@ -66,72 +66,87 @@ export function Navbar() {
           </Link>
 
           <nav className="hidden items-center gap-6 text-sm font-medium text-gray-600 lg:flex">
-            {megaMenuGroups.map((group) => (
-              <div
-                key={group.label}
-                className="relative"
-                onMouseEnter={() => openMenu(group.label)}
-                onFocus={() => openMenu(group.label)}
-                onMouseLeave={() => closeMenuWithDelay()}
-              >
-                <button
-                  type="button"
-                  className="inline-flex items-center gap-1 rounded-full px-3 py-2 text-gray-700 transition hover:bg-gray-50 hover:text-gray-900"
-                >
-                  {group.label}
-                  <svg
-                    className={`h-3 w-3 transition ${openDesktopMenu === group.label ? "rotate-180" : ""}`}
-                    viewBox="0 0 12 8"
-                    fill="none"
-                    xmlns="http://www.w3.org/2000/svg"
+            {megaMenuGroups.map((group) => {
+              const hasDropdown = Array.isArray(group.columns) && group.columns.length > 0;
+              if (!hasDropdown) {
+                return (
+                  <Link
+                    key={group.label}
+                    href={group.href ?? '/'}
+                    className="inline-flex items-center gap-1 rounded-full px-3 py-2 text-gray-700 transition hover:bg-gray-50 hover:text-gray-900"
                   >
-                    <path d="M1 1.5L6 6.5L11 1.5" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" />
-                  </svg>
-                </button>
+                    {group.label}
+                  </Link>
+                );
+              }
+
+              return (
                 <div
-                  onMouseEnter={() => {
-                    if (closeTimeoutRef.current) {
-                      clearTimeout(closeTimeoutRef.current);
-                      closeTimeoutRef.current = null;
-                    }
-                  }}
+                  key={group.label}
+                  className="relative"
+                  onMouseEnter={() => openMenu(group.label)}
+                  onFocus={() => openMenu(group.label)}
                   onMouseLeave={() => closeMenuWithDelay()}
-                  className={`absolute left-1/2 top-full z-40 mt-3 w-[min(78vw,960px)] -translate-x-1/2 rounded-3xl border border-gray-100 bg-white/95 p-6 shadow-2xl shadow-gray-900/10 transition ${openDesktopMenu === group.label ? "pointer-events-auto opacity-100" : "pointer-events-none opacity-0"
-                    }`}
                 >
-                  <div className="grid gap-6 lg:grid-cols-3">
-                    {group.columns.map((column) => (
-                      <div key={column.title} className="space-y-2">
-                        <p className="text-xs font-semibold uppercase tracking-[0.25em] text-gray-500">{column.title}</p>
-                        <ul className="space-y-1.5">
-                          {column.items.map((item) => (
-                            <li key={item.label}>
-                              <Link
-                                href={item.href}
-                                className="block rounded-xl px-3 py-2 text-left text-sm text-gray-700 transition hover:bg-gray-50 hover:text-gray-900"
-                                onClick={() => setOpenDesktopMenu(null)}
-                              >
-                                {item.label}
-                              </Link>
-                            </li>
-                          ))}
-                        </ul>
-                      </div>
-                    ))}
-                  </div>
-                  {group.highlight && (
-                    <div className="mt-6 rounded-2xl border border-gray-100 bg-gray-50/80 p-4 text-sm text-gray-700">
-                      <p className="text-xs font-semibold uppercase tracking-[0.3em] text-gray-500">Featured</p>
-                      <p className="mt-2 text-base font-semibold text-gray-900">{group.highlight.title}</p>
-                      <p className="mt-1 text-sm text-gray-600">{group.highlight.description}</p>
-                      <Link href={group.highlight.href} className="mt-3 inline-flex text-sm font-semibold text-gray-900 underline underline-offset-4">
-                        Explore →
-                      </Link>
+                  <button
+                    type="button"
+                    className="inline-flex items-center gap-1 rounded-full px-3 py-2 text-gray-700 transition hover:bg-gray-50 hover:text-gray-900"
+                  >
+                    {group.label}
+                    <svg
+                      className={`h-3 w-3 transition ${openDesktopMenu === group.label ? "rotate-180" : ""}`}
+                      viewBox="0 0 12 8"
+                      fill="none"
+                      xmlns="http://www.w3.org/2000/svg"
+                    >
+                      <path d="M1 1.5L6 6.5L11 1.5" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" />
+                    </svg>
+                  </button>
+                  <div
+                    onMouseEnter={() => {
+                      if (closeTimeoutRef.current) {
+                        clearTimeout(closeTimeoutRef.current);
+                        closeTimeoutRef.current = null;
+                      }
+                    }}
+                    onMouseLeave={() => closeMenuWithDelay()}
+                    className={`absolute left-1/2 top-full z-40 mt-3 w-[min(78vw,960px)] -translate-x-1/2 rounded-none border border-gray-100 bg-white/95 p-6 shadow-2xl shadow-gray-900/10 transition ${openDesktopMenu === group.label ? "pointer-events-auto opacity-100" : "pointer-events-none opacity-0"
+                      }`}
+                  >
+                    <div className="grid gap-6 lg:grid-cols-3">
+                      {group.columns.map((column) => (
+                        <div key={column.title} className="space-y-2">
+                          <p className="text-xs font-bold uppercase text-red-900 pt-0 underline underline-offset-4">{column.title}</p>
+                          <ul className="space-y-1.5">
+                            {column.items.map((item) => (
+                              <li key={item.label}>
+                                <Link
+                                  href={item.href}
+                                  className="block rounded-xl px-3 py-2 text-left text-sm text-gray-700 transition hover:bg-gray-50 hover:text-gray-900"
+                                  onClick={() => setOpenDesktopMenu(null)}
+                                >
+                                  {item.label}
+                                </Link>
+                              </li>
+                            ))}
+                          </ul>
+                        </div>
+                      ))}
                     </div>
-                  )}
+                    {group.highlight && (
+                      <div className="mt-6 rounded-none border border-gray-100 bg-gray-50/80 p-4 text-sm text-gray-700">
+                        <p className="text-xs font-semibold uppercase tracking-[0.3em] text-gray-500">Featured</p>
+                        <p className="mt-2 text-base font-semibold text-gray-900">{group.highlight.title}</p>
+                        <p className="mt-1 text-sm text-gray-600">{group.highlight.description}</p>
+                        <Link href={group.highlight.href} className="mt-3 inline-flex text-sm font-semibold text-gray-900 underline underline-offset-4">
+                          Explore →
+                        </Link>
+                      </div>
+                    )}
+                  </div>
                 </div>
-              </div>
-            ))}
+              );
+            })}
             
             {primaryLinks.map((link) => (
               <Link key={link.href} href={link.href} className="text-sm font-semibold text-gray-900">
@@ -172,7 +187,7 @@ export function Navbar() {
           className={`lg:hidden fixed inset-x-0 top-16 z-40 px-4 transition ${mobileNavOpen ? "pointer-events-auto opacity-100" : "pointer-events-none opacity-0"
             }`}
         >
-          <div className="mx-auto max-w-3xl rounded-3xl border border-gray-200 bg-white p-6 shadow-2xl shadow-gray-900/10">
+          <div className="mx-auto max-w-3xl rounded-none border border-gray-200 bg-white p-6 shadow-2xl shadow-gray-900/10">
             <div className="space-y-4">
               {megaMenuGroups.map((group) => (
                 <div key={group.label} className="border-b border-gray-100 pb-4">
