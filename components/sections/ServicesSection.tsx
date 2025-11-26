@@ -1,85 +1,332 @@
+'use client'
 import Image from "next/image";
+import Link from "next/link";
+import { useEffect, useRef, useState } from "react";
 
 const serviceCards = [
   {
-    title: "Export",
+    key: "trading",
+    title: "Trading",
     description:
-      "Sesame, coffee, and pulses for global buyers, with grading, cleaning, and quality checks at each step.",
-    image: "https://images.unsplash.com/photo-1504754524776-8f4f37790ca0?auto=format&fit=crop&w=1400&q=80",
-    overlay: "from-black/80 via-black/40 to-amber-900/30",
-    tags: ["Coffee lots", "Pulses", "Logistics"],
+      `Offering essential household goods through a customer-focused, credit-based retail model that supports local manufacturing and international partnerships making high-quality products accessible worldwide.`,
+    images: [
+      "https://images.unsplash.com/photo-1540574163026-643ea20ade25?auto=format&fit=crop&w=1200&q=80",
+      "https://images.unsplash.com/photo-1541534401786-5a3b5c4d0f1b?auto=format&fit=crop&w=1200&q=80",
+      "https://images.unsplash.com/photo-1523473827532-0e0b4d9a4b6f?auto=format&fit=crop&w=1200&q=80",
+      "https://images.unsplash.com/photo-1529333166437-7750a6dd5a70?auto=format&fit=crop&w=1200&q=80",
+    ],
+    overlay: "from-black/70 via-black/30 to-transparent",
+    tags: ["Household goods", "Credit retail", "Local manufacturing", "Global partners"],
+    href: "/services/trading",
   },
   {
+    key: "import",
     title: "Import",
     description:
-      "Selected household appliances from trusted brands, supported by local after-sales service.",
-    image: "https://images.unsplash.com/photo-1582719478250-c89cae4dc85b?auto=format&fit=crop&w=1400&q=80",
+      "Sourcing global-quality household appliances and materials from international markets to meet domestic and regional demand, ensuring affordability and reliability for customers around the world.",
+    images: [
+      "https://images.unsplash.com/photo-1582719478250-c89cae4dc85b?auto=format&fit=crop&w=1200&q=80",
+      "https://images.unsplash.com/photo-1503602642458-232111445657?auto=format&fit=crop&w=1200&q=80",
+      "https://images.unsplash.com/photo-1517249378-59f5f0f4c8d6?auto=format&fit=crop&w=1200&q=80",
+      "https://images.unsplash.com/photo-1520607162513-77705c0f0d4a?auto=format&fit=crop&w=1200&q=80",
+    ],
     overlay: "from-slate-900/80 via-slate-800/60 to-slate-600/40",
     tags: ["Electronics", "Appliances", "After-sales"],
+    href: "/services/import",
   },
   {
-    title: "Furniture Manufacturing",
-    description: "Durable furniture for homes, offices, and hospitality, designed for everyday use.",
-    image: "https://images.unsplash.com/photo-1505693416388-ac5ce068fe85?auto=format&fit=crop&w=1400&q=80",
+    key: "export",
+    title: "Export",
+    description:
+      "Promoting Ethiopia’s agricultural excellence by exporting high-value products like coffee, Green Mung, sesame, pulses, and Soya Beans to international markets connecting Ethiopian farmers to worldwide trade networks.",
+    images: [
+      "https://images.unsplash.com/photo-1504754524776-8f4f37790ca0?auto=format&fit=crop&w=1200&q=80",
+      "https://images.unsplash.com/photo-1496307042754-b4aa456c4a2d?auto=format&fit=crop&w=1200&q=80",
+      "https://images.unsplash.com/photo-1501004318641-b39e6451bec6?auto=format&fit=crop&w=1200&q=80",
+      "https://images.unsplash.com/photo-1528825871115-3581a5387919?auto=format&fit=crop&w=1200&q=80",
+    ],
+    overlay: "from-black/80 via-black/40 to-amber-900/30",
+    tags: ["Coffee", "Sesame", "Pulses"],
+    href: "/services/export",
+  },
+  {
+    key: "manufacturing",
+    title: "Manufacturing",
+    description:
+      "High-quality household furniture including sofa sets, kitchen cabinets, beds, cupboards, dressing tables, shelves, and custom woodwork using durable materials and in-house expertise.",
+    images: [
+      "https://images.unsplash.com/photo-1505693416388-ac5ce068fe85?auto=format&fit=crop&w=1200&q=80",
+      "https://images.unsplash.com/photo-1524758631624-e2822e304c36?auto=format&fit=crop&w=1200&q=80",
+      "https://images.unsplash.com/photo-1499951360447-b19be8fe80f5?auto=format&fit=crop&w=1200&q=80",
+      "https://images.unsplash.com/photo-1550581190-9c1c48d21d6c?auto=format&fit=crop&w=1200&q=80",
+    ],
     overlay: "from-amber-900/80 via-amber-700/50 to-amber-400/30",
     tags: ["Residential", "Commercial", "Custom build"],
+    href: "/services/manufacturing",
   },
 ];
 
 export function ServicesSection() {
-  return (
-    <section
-      id="services"
-      className="relative space-y-10 overflow-hidden rounded-[36px] border border-white/70 bg-linear-to-br from-[#fefbf4] via-white to-[#f4ede3] px-6 py-14 text-gray-900 shadow-2xl shadow-amber-900/10 sm:px-10 lg:px-16"
-    >
-      <div className="pointer-events-none absolute inset-0 bg-[radial-gradient(circle_at_top,_rgba(249,115,22,0.15),_transparent_55%)] opacity-70" />
-      <div className="pointer-events-none absolute inset-0 bg-[url('https://www.transparenttextures.com/patterns/arabesque.png')] opacity-12" />
+  // Large featured Trading card with wider image area
+  function TradingCard({ card }: { card: typeof serviceCards[number] }) {
+    const [index, setIndex] = useState(0);
+    const intervalRef = useRef<number | null>(null);
+    const containerRef = useRef<HTMLDivElement | null>(null);
 
-      <div className="relative space-y-3 text-center lg:text-left">
-        <p className="text-xs uppercase tracking-[0.35em] text-amber-700/80">Services</p>
-        <h2 className="text-3xl font-semibold tracking-tight text-gray-900 sm:text-4xl">Integrated capabilities built for global trade.</h2>
-        <p className="mx-auto max-w-3xl text-sm text-gray-600 lg:mx-0">
-          Export, import, and manufacturing — connected through quality, reliability, and Ethiopian expertise.
-        </p>
-      </div>
+    useEffect(() => {
+      start();
+      return () => stop();
+      // eslint-disable-next-line react-hooks/exhaustive-deps
+    }, []);
 
-      <div className="relative grid gap-6 lg:grid-cols-3">
-        {serviceCards.map((card) => (
-          <div
-            key={card.title}
-            className="group relative overflow-hidden border border-white/60 bg-black/20 shadow-2xl shadow-amber-900/20 transition hover:-translate-y-1.5 hover:shadow-amber-900/30"
-          >
-            <Image
-              src={card.image}
-              alt={`${card.title} visual`}
-              fill
-              className="object-cover transition-transform duration-700 group-hover:scale-105"
-              sizes="(min-width: 1024px) 30vw, 100vw"
-            />
-            <div className={`absolute inset-0 bg-linear-to-br ${card.overlay}`} />
-            <div className="relative flex h-full flex-col justify-between p-6 text-white">
-              <div className="space-y-4">
-                <p className="text-xs uppercase tracking-[0.35em] text-white/70">Service</p>
-                <h3 className="text-2xl font-semibold">{card.title}</h3>
-                <p className="text-sm leading-relaxed text-white/85">{card.description}</p>
-              </div>
-              <div className="mt-6 space-y-4">
-                <div className="flex flex-wrap gap-2 text-[11px] uppercase tracking-[0.35em] text-white/70">
-                  {card.tags.map((tag) => (
-                    <span key={tag} className="inline-flex items-center gap-1">
-                      <span className="h-1 w-1 rounded-full bg-white/60" />
-                      {tag}
-                    </span>
-                  ))}
-                </div>
-                <button className="inline-flex items-center gap-2 text-sm font-semibold text-white transition group-hover:gap-3">
-                  Learn more
-                  <span className="transition-transform duration-300 group-hover:translate-x-1.5">→</span>
-                </button>
-              </div>
+    const start = (delay = 4000) => {
+      stop();
+      intervalRef.current = window.setInterval(() => {
+        setIndex((i) => (i + 1) % card.images.length);
+      }, delay);
+    };
+
+    const stop = () => {
+      if (intervalRef.current) {
+        clearInterval(intervalRef.current);
+        intervalRef.current = null;
+      }
+    };
+
+    const prev = () => {
+      stop();
+      setIndex((i) => (i - 1 + card.images.length) % card.images.length);
+      start();
+    };
+
+    const next = () => {
+      stop();
+      setIndex((i) => (i + 1) % card.images.length);
+      start();
+    };
+
+    // Touch support
+    useEffect(() => {
+      const el = containerRef.current;
+      if (!el) return;
+      let startX: number | null = null;
+      const onTouchStart = (e: TouchEvent) => {
+        startX = e.touches[0].clientX;
+      };
+      const onTouchEnd = (e: TouchEvent) => {
+        if (startX === null) return;
+        const dx = e.changedTouches[0].clientX - startX;
+        if (Math.abs(dx) > 40) {
+          if (dx > 0) prev(); else next();
+        }
+        startX = null;
+      };
+      el.addEventListener("touchstart", onTouchStart);
+      el.addEventListener("touchend", onTouchEnd);
+      return () => {
+        el.removeEventListener("touchstart", onTouchStart);
+        el.removeEventListener("touchend", onTouchEnd);
+      };
+      // eslint-disable-next-line react-hooks/exhaustive-deps
+    }, [card.images.length]);
+
+    return (
+      <article className="group grid gap-6 rounded-lg border border-white/60 bg-white shadow-sm lg:grid-cols-2">
+        <div
+          ref={containerRef}
+          onMouseEnter={() => stop()}
+          onMouseLeave={() => start()}
+          className="relative h-64 lg:h-full"
+        >
+          {card.images.map((src, i) => (
+            <div
+              key={`${card.key}-slide-${i}`}
+              className={`absolute inset-0 transition-opacity duration-700 ${i === index ? "opacity-100" : "opacity-0 pointer-events-none"}`}
+            >
+              <Image src={src} alt={`${card.title} ${i + 1}`} fill className="object-cover" sizes="(min-width:1024px) 50vw, 100vw" />
             </div>
+          ))}
+
+          <button
+            onClick={prev}
+            aria-label="Previous image"
+            className="absolute left-4 top-1/2 -translate-y-1/2 rounded-full bg-white/50 p-2 text-gray-900 shadow-md hover:bg-white/70"
+          >
+            ‹
+          </button>
+          <button
+            onClick={next}
+            aria-label="Next image"
+            className="absolute right-4 top-1/2 -translate-y-1/2 rounded-full bg-white/50 p-2 text-gray-900 shadow-md hover:bg-white/70"
+          >
+            ›
+          </button>
+
+          <div className="absolute left-6 bottom-6 rounded-sm bg-black/50 px-3 py-1 text-sm text-white">
+            {card.title}
           </div>
-        ))}
+        </div>
+
+        <div className="p-6">
+          <p className="text-xs uppercase tracking-wide text-amber-700">{card.title}</p>
+          <h3 className="mt-2 text-3xl font-bold text-gray-900">{card.title}</h3>
+          <p className="mt-4 text-base text-gray-700">{card.description}</p>
+
+          <div className="mt-6 flex flex-wrap gap-2">
+            {card.tags.map((t) => (
+              <span key={`${card.key}-tag-${t}`} className="rounded-full bg-gray-100 px-3 py-1 text-sm font-medium text-gray-700">
+                {t}
+              </span>
+            ))}
+          </div>
+
+          <div className="mt-6">
+            <Link href={card.href ?? '/services'} className="inline-flex items-center gap-2 rounded-md bg-amber-600 px-4 py-2 text-sm font-semibold text-white hover:bg-amber-700">
+              See more
+              <span>→</span>
+            </Link>
+          </div>
+        </div>
+      </article>
+    );
+  }
+
+  // Individual card component with carousel behavior
+  function ServiceCard({ card }: { card: typeof serviceCards[number] }) {
+    const [index, setIndex] = useState(0);
+    const intervalRef = useRef<number | null>(null);
+    const containerRef = useRef<HTMLDivElement | null>(null);
+
+    useEffect(() => {
+      start();
+      return () => stop();
+      // eslint-disable-next-line react-hooks/exhaustive-deps
+    }, []);
+
+    const start = (delay = 4000) => {
+      stop();
+      intervalRef.current = window.setInterval(() => {
+        setIndex((i) => (i + 1) % card.images.length);
+      }, delay);
+    };
+
+    const stop = () => {
+      if (intervalRef.current) {
+        clearInterval(intervalRef.current);
+        intervalRef.current = null;
+      }
+    };
+
+    const prev = () => {
+      stop();
+      setIndex((i) => (i - 1 + card.images.length) % card.images.length);
+      start();
+    };
+
+    const next = () => {
+      stop();
+      setIndex((i) => (i + 1) % card.images.length);
+      start();
+    };
+
+    // Touch support for swipe
+    useEffect(() => {
+      const el = containerRef.current;
+      if (!el) return;
+      let startX: number | null = null;
+      const onTouchStart = (e: TouchEvent) => {
+        startX = e.touches[0].clientX;
+      };
+      const onTouchEnd = (e: TouchEvent) => {
+        if (startX === null) return;
+        const dx = e.changedTouches[0].clientX - startX;
+        if (Math.abs(dx) > 40) {
+          if (dx > 0) prev(); else next();
+        }
+        startX = null;
+      };
+      el.addEventListener("touchstart", onTouchStart);
+      el.addEventListener("touchend", onTouchEnd);
+      return () => {
+        el.removeEventListener("touchstart", onTouchStart);
+        el.removeEventListener("touchend", onTouchEnd);
+      };
+      // eslint-disable-next-line react-hooks/exhaustive-deps
+    }, [card.images.length]);
+
+    return (
+      <article className="group grid gap-6 rounded-lg border border-white/60 bg-white shadow-sm lg:grid-cols-2">
+        <div
+          ref={containerRef}
+          onMouseEnter={() => stop()}
+          onMouseLeave={() => start()}
+          className="relative h-64 lg:h-full"
+        >
+          {card.images.map((src, i) => (
+            <div
+              key={`${card.key}-slide-${i}`}
+              className={`absolute inset-0 transition-opacity duration-700 ${i === index ? "opacity-100" : "opacity-0 pointer-events-none"}`}
+            >
+              <Image src={src} alt={`${card.title} ${i + 1}`} fill className="object-cover" sizes="(min-width:1024px) 50vw, 100vw" />
+            </div>
+          ))}
+
+          <button
+            onClick={prev}
+            aria-label="Previous image"
+            className="absolute left-3 top-1/2 -translate-y-1/2 rounded-full bg-white/40 p-2 text-gray-900 shadow-md hover:bg-white/60"
+          >
+            ‹
+          </button>
+          <button
+            onClick={next}
+            aria-label="Next image"
+            className="absolute right-3 top-1/2 -translate-y-1/2 rounded-full bg-white/40 p-2 text-gray-900 shadow-md hover:bg-white/60"
+          >
+            ›
+          </button>
+        </div>
+
+        <div className="p-6">
+          <p className="text-xs uppercase tracking-wide text-amber-700">{card.title}</p>
+          <h3 className="mt-2 text-2xl font-semibold text-gray-900">{card.title}</h3>
+          <p className="mt-3 text-sm text-gray-600">{card.description}</p>
+
+          <div className="mt-5 flex flex-wrap gap-2">
+            {card.tags.map((t) => (
+              <span key={`${card.key}-tag-${t}`} className="rounded-full bg-gray-100 px-2 py-1 text-xs font-medium text-gray-700">
+                {t}
+              </span>
+            ))}
+          </div>
+
+          <div className="mt-6">
+            <Link href={card.href ?? '/services'} className="inline-flex items-center gap-2 rounded-md bg-amber-600 px-4 py-2 text-sm font-semibold text-white hover:bg-amber-700">
+              See more
+              <span>→</span>
+            </Link>
+          </div>
+        </div>
+      </article>
+    );
+  }
+
+    return (
+      <section id="services" className="relative space-y-8 px-6 py-10 sm:px-10 lg:px-16">
+      <div className="mx-auto max-w-7xl">
+        <div className="text-center mb-8">
+          <p className="text-sm uppercase tracking-wider text-amber-700">Services</p>
+          <h2 className="mt-2 text-4xl font-extrabold text-gray-900 sm:text-5xl">Integrated capabilities built for global trade</h2>
+          <p className="mt-3 max-w-3xl mx-auto text-lg text-gray-700">Export, import, trading and manufacturing — connected through strict quality control, partner networks and local expertise. Trading is our core: retail distribution, credit-based customer models and in-house manufacturing support make quality products accessible across Ethiopia and the region.</p>
+        </div>
+
+        <div className="grid gap-6">
+          {serviceCards.map((card) => (
+            card.key === 'trading'
+              ? <TradingCard key={card.key} card={card} />
+              : <ServiceCard key={card.key} card={card} />
+          ))}
+        </div>
       </div>
     </section>
   );

@@ -56,10 +56,10 @@ export function AboutSection() {
       <div className="relative mx-auto max-w-7xl">
         {/* Header */}
         <div className="mb-12 text-center">
-          <div className="inline-flex items-center gap-2 rounded-full bg-slate-900 px-4 py-2 text-xs font-medium uppercase tracking-[0.2em] text-white">
+          <div className="inline-flex items-center gap-2 rounded bg-red-700 px-4 py-2 text-xs font-medium uppercase tracking-[0.1rem] text-white">
             Est. 2015 · Trusted in Global Trade
           </div>
-          <h1 className="mt-4 text-3xl font-light tracking-tight text-slate-900 sm:text-4xl">
+          <h1 className="mt-4 text-3xl font-bold tracking-tight text-slate-900 sm:text-4xl">
             ABOUT US
           </h1>
         </div>
