@@ -39,7 +39,7 @@ const partners = [
   { id: 2, name: "Hisense", logo: "/hisense.svg" },
   { id: 3, name: "LG", logo: "/lg.svg" },
 
-  { id: 5, name: "Sony", logo: "/sony.svg" },
+  { id: 5, name: "Sony ", logo: "/sony.svg" },
   { id: 6, name: "Suzuki", logo: "/suzuki.svg" },
 ];
 
