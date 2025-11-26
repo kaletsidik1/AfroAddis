@@ -34,7 +34,7 @@ export function CollaboratorsSection() {
         {collaborators.map((card, index) => (
           <div
             key={card.title}
-            className="rounded-[26px] border border-white/70 bg-white/80 p-6 shadow-lg shadow-gray-900/5 ring-1 ring-gray-100/60"
+            className=" border border-white/70 bg-white/80 p-6 shadow-lg shadow-gray-900/5 ring-1 ring-gray-100/60"
           >
             <div className="text-xs font-semibold uppercase tracking-[0.35em] text-emerald-700">{card.tag}</div>
             <div className="mt-4 flex items-center gap-2 text-sm text-gray-500">
