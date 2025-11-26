@@ -12,7 +12,7 @@ export function ContactSection() {
       </div>
 
       <div className="grid gap-8 md:grid-cols-[minmax(0,1.2fr)_minmax(0,0.8fr)]">
-        <form className="space-y-4 rounded-[28px] border border-white/70 bg-white/90 p-6 shadow-xl shadow-gray-900/5">
+        <form className="space-y-4  border border-white/70 bg-white/90 p-6 shadow-xl shadow-gray-900/5">
           <div className="grid gap-4 sm:grid-cols-2">
             <div className="space-y-1">
               <label className="text-xs font-semibold uppercase tracking-[0.3em] text-gray-500" htmlFor="home-name">
@@ -66,7 +66,7 @@ export function ContactSection() {
         </form>
 
         <div className="space-y-5">
-          <div className="relative h-64 overflow-hidden rounded-[28px] border border-white/60 bg-white/70 shadow-lg shadow-gray-900/5">
+          <div className="relative h-64 overflow-hidden  border border-white/60 bg-white/70 shadow-lg shadow-gray-900/5">
             <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent" />
             <Image
               src="https://images.unsplash.com/photo-1500530855697-b586d89ba3ee?auto=format&fit=crop&w=1200&q=80"
@@ -80,7 +80,7 @@ export function ContactSection() {
               <p className="text-lg font-semibold">HQ · Bole, Addis Ababa</p>
             </div>
           </div>
-          <div className="rounded-[24px] border border-white/70 bg-white/90 p-6 text-sm text-gray-700 shadow-lg shadow-gray-900/5">
+          <div className=" border border-white/70 bg-white/90 p-6 text-sm text-gray-700 shadow-lg shadow-gray-900/5">
             <h3 className="text-base font-semibold text-gray-900">Contact details</h3>
             <dl className="mt-4 space-y-3">
               <div>

@@ -61,7 +61,7 @@ export function AboutSection() {
         </div>
 
         <div className="space-y-6 border-l border-white/40 pl-6">
-          <div className="rounded-[28px] border border-white/60 bg-white/80 p-6 shadow-lg shadow-amber-900/10">
+          <div className="border border-white/60 bg-white/80 p-6 shadow-lg shadow-amber-900/10">
             <div className="flex items-center justify-between">
               <p className="text-xs uppercase tracking-[0.35em] text-amber-600">Coffee processing</p>
               <span className="text-xs text-gray-500">Lab-backed QC</span>
@@ -84,7 +84,7 @@ export function AboutSection() {
             </div>
           </div>
 
-          <div className="rounded-[28px] border border-amber-200/80 bg-gradient-to-br from-amber-900/10 via-amber-50/90 to-white p-6 shadow-lg shadow-amber-900/10">
+          <div className=" border border-amber-200/80 bg-gradient-to-br from-amber-900/10 via-amber-50/90 to-white p-6 shadow-lg shadow-amber-900/10">
             <div className="border-l-4 border-amber-500 pl-4">
               <p className="text-xs uppercase tracking-[0.35em] text-amber-700/90">Why partners choose us</p>
               <p className="mt-2 text-base font-semibold text-gray-900">Enterprise-level assurance for every consignment.</p>

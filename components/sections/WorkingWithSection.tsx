@@ -33,7 +33,7 @@ export function WorkingWithSection() {
         {workingWith.map((card) => (
           <div
             key={card.title}
-            className="rounded-[26px] border border-emerald-100/70 bg-white/80 p-6 shadow-lg shadow-emerald-900/5"
+            className="border border-emerald-100/70 bg-white/80 p-6 shadow-lg shadow-emerald-900/5"
           >
             <h3 className="text-lg font-semibold text-gray-900">{card.title}</h3>
             <ul className="mt-4 space-y-2 text-sm text-gray-700">
