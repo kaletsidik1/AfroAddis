@@ -104,8 +104,8 @@ export const megaMenuGroups: MegaMenuGroup[] = [
   ],
 },
   {
-    label: "Partners & Resources",
-    href: "/partners",
+    label: "Working With",
+    href: "/#working-with",
     columns: [],
   },
 ];

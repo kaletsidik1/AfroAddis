@@ -154,7 +154,7 @@ export function HeroSection() {
               </p>
             </div>
             <div className="relative mt-6">
-              <div className="h-48 w-full rounded-2xl bg-gradient-to-br from-slate-900 to-slate-800">
+              <div className="h-48 w-full rounded-2xl bg-linear-to-br from-slate-900 to-slate-800">
                 <div className="absolute inset-0 opacity-50">
                   <div className="absolute inset-0 bg-[url('https://upload.wikimedia.org/wikipedia/commons/thumb/5/5f/BlankMap-World.svg/1024px-BlankMap-World.svg.png')] bg-contain bg-center bg-no-repeat invert" />
                 </div>

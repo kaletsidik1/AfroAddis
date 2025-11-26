@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
 import Link from "next/link";
+import { Mail, Phone, MapPin, FileText, Linkedin, Twitter, Facebook } from "lucide-react";
 import "./globals.css";
 import { Navbar } from "@/components/Navbar";
 
@@ -35,41 +36,54 @@ export default function RootLayout({
           {children}
         </main>
 
-        <footer className="mt-16 border-t border-gray-200 bg-white/80">
-          <div className="mx-auto flex max-w-7xl flex-col gap-8 px-4 py-10 text-sm text-gray-700 sm:flex-row sm:items-start sm:justify-between sm:px-6 lg:px-10">
-            <div className="space-y-3">
-              <p className="text-base font-semibold text-gray-900">Afro Addis</p>
-              <p className="max-w-sm text-sm text-gray-600">
-                A diversified Ethiopian group working across agro-commodities, imports, and furniture manufacturing.
-              </p>
-            </div>
-            <div className="flex flex-wrap gap-12">
-              <div className="space-y-2">
-                <p className="text-xs font-semibold uppercase tracking-wide text-gray-500">Quick links</p>
-                <ul className="space-y-1 text-sm">
-                  <li><Link href="/about" className="hover:text-gray-900">About</Link></li>
-                  <li><Link href="/services" className="hover:text-gray-900">Services</Link></li>
-                  <li><Link href="/products" className="hover:text-gray-900">Products</Link></li>
-                  <li><Link href="/work-with-us" className="hover:text-gray-900">Work with us</Link></li>
+        <footer className="mt-16 bg-red-700 text-white">
+          <div className="mx-auto max-w-7xl px-4 py-12 sm:px-6 lg:px-10">
+            <div className="grid gap-10 md:grid-cols-3">
+              <div className="space-y-4">
+                <p className="text-lg font-bold">Afro Addis</p>
+                <p className="max-w-sm text-sm text-red-100">
+                  A diversified Ethiopian group working across agro-commodities, imports, and furniture manufacturing.
+                </p>
+                <div className="flex items-center gap-3 text-red-100">
+                  <a href="#" aria-label="LinkedIn" className="hover:text-white"><Linkedin size={18} /></a>
+                  <a href="#" aria-label="Twitter" className="hover:text-white"><Twitter size={18} /></a>
+                  <a href="#" aria-label="Facebook" className="hover:text-white"><Facebook size={18} /></a>
+                </div>
+              </div>
+
+              <div>
+                <p className="text-xs font-semibold uppercase tracking-wide text-red-200">Quick links</p>
+                <ul className="mt-3 space-y-2 text-sm">
+                  <li><Link href="/about" className="hover:text-white">About</Link></li>
+                  <li><Link href="/services" className="hover:text-white">Services</Link></li>
+                  <li><Link href="/products" className="hover:text-white">Products</Link></li>
+                  <li><Link href="/work-with-us" className="hover:text-white">Work with us</Link></li>
                 </ul>
               </div>
-              <div className="space-y-2">
-                <p className="text-xs font-semibold uppercase tracking-wide text-gray-500">Contact</p>
-                <ul className="space-y-1 text-sm">
-                  <li><span className="text-gray-800">info@afroaddis.com</span></li>
-                  <li><span className="text-gray-800">+251 (0) 11 000 0000</span></li>
-                  <li><span className="text-gray-800">Addis Ababa, Ethiopia</span></li>
-                  <li>
-                    <Link href="/contact" className="text-gray-900 underline underline-offset-4 hover:no-underline">
-                      Contact us page
-                    </Link>
-                  </li>
+
+              <div>
+                <p className="text-xs font-semibold uppercase tracking-wide text-red-200">Contact</p>
+                <ul className="mt-3 space-y-3 text-sm text-red-100">
+                  <li className="flex items-center gap-2"><Mail size={16} /> <span>info@afroaddis.com</span></li>
+                  <li className="flex items-center gap-2"><Phone size={16} /> <span>+251 (0) 11 000 0000</span></li>
+                  <li className="flex items-center gap-2"><MapPin size={16} /> <span>Addis Ababa, Ethiopia</span></li>
                 </ul>
+
+                <div className="mt-4">
+                  <Link
+                    href="/corporate-profile.pdf"
+                    className="inline-flex items-center gap-2 rounded bg-white/10 px-3 py-2 text-sm font-semibold hover:bg-white/20"
+                  >
+                    <FileText size={16} />
+                    Download corporate profile
+                  </Link>
+                </div>
               </div>
             </div>
           </div>
-          <div className="border-t border-gray-100 bg-white/90">
-            <div className="mx-auto max-w-7xl px-4 py-3 text-xs text-gray-500 sm:px-6 lg:px-10">
+
+          <div className="border-t border-red-600 bg-red-800">
+            <div className="mx-auto max-w-7xl px-4 py-3 text-xs text-red-200 sm:px-6 lg:px-10">
               © {new Date().getFullYear()} Afro Addis. All rights reserved.
             </div>
           </div>
