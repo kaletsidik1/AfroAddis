@@ -29,16 +29,16 @@ export const megaMenuGroups: MegaMenuGroup[] = [
       {
         title: "Company",
         items: [
-          { label: "Company profile", href: "#about" },
-          { label: "Governance & board", href: "/governance" },
-          { label: "Achievements & awards", href: "/achievements" },
+          { label: "Company profile", href: "/about#company" },
+          { label: "Governance & board", href: "/about#governance" },
+          { label: "Achievements & awards", href: "/about#achievements" },
         ],
       },
       {
         title: "Resources",
         items: [
           { label: "Corporate timeline", href: "/about#timeline" },
-          { label: "News & updates", href: "/resources#news" },
+          { label: "News & updates", href: "/about#news" },
         ],
       },
     ],
@@ -49,26 +49,28 @@ export const megaMenuGroups: MegaMenuGroup[] = [
     {
       title: "Core Business Services",
       items: [
-        { label: "Trading", href: "/trading" },
-        { label: "Import & Sourcing", href: "/import" },
-        { label: "Export & Distribution", href: "/export" },
-        { label: "Manufacturing & Production", href: "/manufacturing" },
+        { label: "Trading", href: "/services#trading" },
+        { label: "Import & Sourcing", href: "/services#import" },
+        { label: "Export & Distribution", href: "/services#export" },
+        { label: "Manufacturing & Production", href: "/services#manufacturing" },
       ],
     },
     {
       title: "Retail & Consumer Solutions",
       items: [
-        { label: "Household Retail & Credit", href: "/retail" },
-        { label: "Strategic Partnership Programs", href: "/partners" },
-        { label: "After-Sales Support Services", href: "/service" },
+        { label: "Household Retail & Credit", href: "/services#retail" },
+        { label: "Strategic Partnership Programs", href: "/services#partnerships" },
+        { label: "After-Sales Support Services", href: "/services#support" },
+        { label: "Strategic Partnership Programs", href: "/services#import" },
+        { label: "After-Sales Support Services", href: "/services#manufacturing" },
       ],
     },
     {
       title: "Strategic Growth Services",
       items: [
-        { label: "Mining Industry Solutions", href: "/mining" },
-        { label: "Vehicle Assembly Operations", href: "/assembly" },
-        { label: "Joint Venture Partnerships", href: "/partnerships" },
+        { label: "Mining Industry Solutions", href: "/services#export" },
+        { label: "Vehicle Assembly Operations", href: "/services#manufacturing" },
+        { label: "Joint Venture Partnerships", href: "/services#trading" },
       ],
     },
   ],
@@ -80,25 +82,25 @@ export const megaMenuGroups: MegaMenuGroup[] = [
     {
       title: "Household Goods",
       items: [
-        { label: "Home Appliances", href: "/products#appliances" },
-        { label: "Furniture & Decor", href: "/products#furniture" },
-        { label: "Kitchenware", href: "/products#kitchen" },
+        { label: "Home Appliances", href: "/products#household" },
+        { label: "Furniture & Decor", href: "/products#household" },
+        { label: "Kitchenware", href: "/products#household" },
       ],
     },
     {
       title: "Electronics & Tech",
       items: [
-        { label: "Smartphones & Tablets", href: "/products#mobile" },
-        { label: "Computers & Accessories", href: "/products#computers" },
-        { label: "Audio & Video Equipment", href: "/products#av" },
+        { label: "Smartphones & Tablets", href: "/products#electronics" },
+        { label: "Computers & Accessories", href: "/products#electronics" },
+        { label: "Audio & Video Equipment", href: "/products#electronics" },
       ],
     },
     {
       title: "Automotive & Industrial",
       items: [
         { label: "Vehicle Parts & Accessories", href: "/products#automotive" },
-        { label: "Machinery & Tools", href: "/products#machinery" },
-        { label: "Building Materials", href: "/products#construction" },
+        { label: "Machinery & Tools", href: "/products#automotive" },
+        { label: "Building Materials", href: "/products#automotive" },
       ],
     },
   ],
