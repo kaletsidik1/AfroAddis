@@ -45,12 +45,12 @@ function PartnerLogo({ name, src, scale }: { name: string; src?: string; scale?:
 }
 
 const partners = [
-  { id: 1, name: "Samsung", logo: "/samsung.svg", scale: 1.25 },
-  { id: 2, name: "Hisense", logo: "/hisense.png", scale: 1.18 },
-  { id: 3, name: "LG", logo: "/lg.svg" },
-{ id: 4, name: "Kumtel", logo: "/kumtel.png", scale: 1.2 },
-  { id: 5, name: "Sony ", logo: "/sony.svg" },
-  { id: 6, name: "Suzuki", logo: "/suzuki.svg" },
+  { id: 1, name: "Samsung", logo: "/samsung.svg", scale: 1.8 },
+  { id: 2, name: "Hisense", logo: "/hisense.png", scale: 2.2 },
+  { id: 3, name: "LG", logo: "/lg.svg" , scale: 0.7 },
+{ id: 4, name: "Kumtel", logo: "/kumtel.png", scale: 1.1 },
+  { id: 5, name: "Sony ", logo: "/sony.svg", scale: 0.9 },
+  { id: 6, name: "Suzuki", logo: "/suzuki.svg", scale: 0.7},
 ];
 
 export function WorkingWithSection() {
@@ -73,10 +73,10 @@ export function WorkingWithSection() {
       </div>
 
       <div className="mx-auto max-w-5xl">
-        <div className="grid items-center justify-items-center gap-6 [grid-template-columns:repeat(auto-fit,minmax(140px,1fr))]">
+        <div className="grid items-center justify-items-center sm:gap-6 md:gap-8 grid-cols-[repeat(auto-fit,minmax(140px,1fr))]">
           {partners.map((p) => (
             <div key={p.id} className="flex items-center justify-center">
-              <PartnerLogo name={p.name} src={p.logo} />
+              <PartnerLogo name={p.name} src={p.logo} scale={p.scale} />
             </div>
           ))}
         </div>
