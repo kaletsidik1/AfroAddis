@@ -40,13 +40,18 @@ export default function MagazinesListPage() {
             href={m.href}
             className="group block overflow-hidden rounded-xl border border-gray-200 bg-white shadow-sm transition hover:-translate-y-0.5 hover:shadow-md"
           >
-            <MagazineCoverThumb pdfUrl={`/magazines/${m.slug}.pdf`} title={m.name} />
+            <MagazineCoverThumb
+              pdfUrl={`/magazines/${m.slug}.pdf`}
+              title={m.name}
+            />
             <div className="flex items-center justify-between px-4 py-3">
               <div>
                 <p className="font-semibold text-gray-900">{m.name}</p>
                 <p className="text-xs text-gray-600">PDF</p>
               </div>
-              <span className="text-sm font-medium text-red-700 group-hover:underline">Open →</span>
+              <span className="text-sm font-medium text-red-700 group-hover:underline">
+                Open →
+              </span>
             </div>
           </Link>
         ))}

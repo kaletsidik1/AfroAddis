@@ -26,7 +26,10 @@ export function MagazineCoverThumb({
         (pdfjsLib as any).GlobalWorkerOptions.workerSrc =
           "https://unpkg.com/pdfjs-dist@3.11.174/legacy/build/pdf.worker.min.js";
 
-        const loadingTask = (pdfjsLib as any).getDocument({ url: pdfUrl, signal: controller.signal });
+        const loadingTask = (pdfjsLib as any).getDocument({
+          url: pdfUrl,
+          signal: controller.signal,
+        });
         const pdf = await loadingTask.promise;
         const page = await pdf.getPage(1);
         const viewport = page.getViewport({ scale });
