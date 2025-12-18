@@ -2,7 +2,7 @@ import { notFound } from "next/navigation";
 import { pageBlueprints } from "@/content/pageBlueprints";
 
 type PageProps = {
-  params: { page: string };
+  params: Promise<{ page: string }>;
 };
 
 export function generateStaticParams() {
@@ -11,8 +11,9 @@ export function generateStaticParams() {
 
 const toId = (value: string) => value.toLowerCase().replace(/[^a-z0-9]+/g, "-");
 
-export default function SectionPage({ params }: PageProps) {
-  const page = pageBlueprints[params.page];
+export default async function SectionPage({ params }: PageProps) {
+  const { page: pageKey } = await params;
+  const page = pageBlueprints[pageKey];
 
   if (!page) {
     notFound();
