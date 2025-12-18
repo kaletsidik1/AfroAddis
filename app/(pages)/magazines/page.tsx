@@ -28,7 +28,6 @@ export default function MagazinesListPage() {
     <div className="pt-20 lg:pt-24 mx-auto max-w-5xl px-4">
       <h1 className="text-2xl font-bold">Magazines</h1>
       <p className="mt-2 text-gray-600 text-sm">
-        Explore issues stored in{" "}
         <span className="font-mono">public/magazines</span>.
       </p>
 
