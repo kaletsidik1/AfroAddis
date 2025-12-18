@@ -43,7 +43,7 @@ export function HeroSection() {
 
       <div className="relative grid items-stretch gap-12 px-6 py-12 md:grid-cols-[minmax(0,1.2fr)_minmax(0,0.9fr)] sm:px-10 sm:py-16 lg:px-16">
         <div className="space-y-8">
-          <div className="inline-flex items-center gap-2 rounded border border-white/20 px-4 py-1 font-semibold uppercase tracking-[0.35em] bg-red-700">
+          <div className="inline-flex items-center gap-2 rounded border border-white/20 px-1 py-2 font-semibold uppercase tracking-[0.35em] bg-red-700">
             Afro Addis · Ethiopia
           </div>
           <div className="space-y-4">

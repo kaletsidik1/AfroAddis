@@ -9,7 +9,6 @@ const categories = [
     title: "Household Goods",
     copy: "Essential household products spanning appliances, furniture and kitchenware — curated for quality, durability and local availability.",
     images: [
-      "https://images.unsplash.com/photo-1581579182174-5de5b4c5b3c2?auto=format&fit=crop&w=1200&q=80",
       "https://images.unsplash.com/photo-1550581190-9c1c48d21d6c?auto=format&fit=crop&w=1200&q=80",
       "https://images.unsplash.com/photo-1505693416388-ac5ce068fe85?auto=format&fit=crop&w=1200&q=80",
       "https://images.unsplash.com/photo-1540574163026-643ea20ade25?auto=format&fit=crop&w=1200&q=80",
@@ -24,9 +23,8 @@ const categories = [
     images: [
       "https://images.unsplash.com/photo-1511707171634-5f897ff02aa9?auto=format&fit=crop&w=1200&q=80",
       "https://images.unsplash.com/photo-1517336714731-489689fd1ca8?auto=format&fit=crop&w=1200&q=80",
-      "https://images.unsplash.com/photo-1518444020801-6a3f3a3f4a8b?auto=format&fit=crop&w=1200&q=80",
+
       "https://images.unsplash.com/photo-1518770660439-4636190af475?auto=format&fit=crop&w=1200&q=80",
-      "https://images.unsplash.com/photo-1510552776732-01acc0fbb2a6?auto=format&fit=crop&w=1200&q=80",
     ],
     href: "/products#electronics",
   },
@@ -35,9 +33,6 @@ const categories = [
     title: "Automotive & Industrial",
     copy: "Vehicle parts, machinery and building materials for professionals and repair shops — reliable supply chains and quality control.",
     images: [
-      "https://images.unsplash.com/photo-1519885273164-0f9d72a6f6d8?auto=format&fit=crop&w=1200&q=80",
-      "https://images.unsplash.com/photo-1518186233393-0a0b8a1a6a8a?auto=format&fit=crop&w=1200&q=80",
-      "https://images.unsplash.com/photo-1581093448792-8f75f3d8d9d6?auto=format&fit=crop&w=1200&q=80",
       "https://images.unsplash.com/photo-1503602642458-232111445657?auto=format&fit=crop&w=1200&q=80",
       "https://images.unsplash.com/photo-1520607162513-77705c0f0d4a?auto=format&fit=crop&w=1200&q=80",
     ],
