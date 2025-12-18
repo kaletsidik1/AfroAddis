@@ -66,20 +66,12 @@ function StatItem({ value, label }: { value: string | number; label: string }) {
 
 const featuredImages = [
   {
-    src: "https://images.unsplash.com/photo-15656800194b-41d4b54fd093?auto=format&fit=crop&w=1200&q=80",
-    caption: "Global Distribution Network",
-  },
-  {
     src: "https://images.unsplash.com/photo-1556742049-0cfed4f6a45d?auto=format&fit=crop&w=1200&q=80",
     caption: "Quality Assurance Centers",
   },
   {
     src: "https://images.unsplash.com/photo-1586528116311-ad8dd3c8310d?auto=format&fit=crop&w=1200&q=80",
     caption: "Modern Logistics Infrastructure",
-  },
-  {
-    src: "https://images.unsplash.com/photo-15656800194b-41d4b54fd093?auto=format&fit=crop&w=1200&q=80",
-    caption: "International Trade Partnerships",
   },
 ];
 
@@ -180,7 +172,7 @@ export function AboutSection() {
             </div>
 
             {/* Main Image Slider */}
-            <div className="relative h-96 sm:h-[28rem] overflow-hidden bg-slate-200 shadow-xl">
+            <div className="relative h-96 sm:h-112 overflow-hidden bg-slate-200 shadow-xl">
               {featuredImages.map((image, index) => (
                 <div
                   key={`${image.src}-${index}`}
