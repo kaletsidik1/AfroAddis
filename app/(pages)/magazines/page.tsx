@@ -27,13 +27,12 @@ export default function MagazinesListPage() {
     <div className="pt-20 lg:pt-24 mx-auto max-w-5xl px-4">
       <h1 className="text-2xl font-bold">Magazines</h1>
       <p className="mt-2 text-gray-600 text-sm">
-        Explore issues stored in <span className="font-mono">public/magazines</span>.
+        Explore issues stored in{" "}
+        <span className="font-mono">public/magazines</span>.
       </p>
 
       <div className="mt-6 grid gap-4 sm:grid-cols-2">
-        {items.length === 0 && (
-          <p className="text-gray-500">No PDFs found.</p>
-        )}
+        {items.length === 0 && <p className="text-gray-500">No PDFs found.</p>}
         {items.map((m) => (
           <Link
             key={m.slug}

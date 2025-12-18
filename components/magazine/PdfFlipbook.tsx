@@ -148,7 +148,9 @@ export default function PdfFlipbook({
         <p className="py-1 text-center text-sm text-red-600">{error}</p>
       )}
       {!loading && !error && pageCount > 0 && (
-        <p className="py-1 text-center text-xs text-gray-500">{pageCount} page(s)</p>
+        <p className="py-1 text-center text-xs text-gray-500">
+          {pageCount} page(s)
+        </p>
       )}
 
       <div className="flex justify-center">
