@@ -7,9 +7,9 @@ const sections = [
     title: "Company profile",
     lead: "Founded in 2015 in Addis Ababa, operating across trading & export (coffee, pulses, oilseeds), import & retail (appliances, electronics, household), and manufacturing (furniture & woodwork).",
     points: [
-      "Registered in Ethiopia with multi-division operations and partner-centric model.",
-      "Serving domestic retail/wholesale partners and global buyers in Africa, EU, Middle East, and North America.",
-      "Value pillars: trust, integrity, professionalism, on-time quality delivery.",
+      "Multi-division operations: export (coffee, pulses, oilseeds), import & retail (appliances, electronics, household), manufacturing (furniture & woodwork).",
+      "Serve domestic retail/wholesale partners and global buyers in Africa, EU, Middle East, North America.",
+      "Value pillars: trust, integrity, professionalism, and on-time quality delivery.",
     ],
     image:
       "https://images.unsplash.com/photo-1529333166437-7750a6dd5a70?auto=format&fit=crop&w=1600&q=80",
@@ -19,8 +19,8 @@ const sections = [
     title: "Governance & board",
     lead: "Board and advisory oversight on strategy, capital allocation, and risk with audit & risk functions enforcing SOPs and compliance.",
     points: [
-      "Audit & risk controls for procurement, FX, logistics, and documentation.",
-      "Periodic audits and governance cadence to maintain transparency and performance.",
+      "Controls for procurement, FX, logistics, and documentation with defined SOPs.",
+      "Periodic audits, governance cadence, and reporting for transparency and performance.",
       "Compliance aligned to Ethiopian regulations and international trade standards.",
     ],
     image:
@@ -32,7 +32,7 @@ const sections = [
     lead: "Recognitions for transparent reporting, compliant operations, and contributions to sector associations and trade finance partnerships.",
     points: [
       "Best Taxpayer Award for compliant trade and transparent reporting.",
-      "Active member of Addis Ababa Chamber of Commerce and sector bodies.",
+      "Active member of Addis Ababa Chamber of Commerce and sector associations.",
       "Structured trade finance partnerships with leading Ethiopian banks.",
     ],
     image:
