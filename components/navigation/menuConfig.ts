@@ -26,21 +26,21 @@ export const megaMenuGroups: MegaMenuGroup[] = [
     label: "About",
     href: "/about",
     columns: [
-      // {
-      //   title: "Company",
-      //   items: [
-      //     { label: "Company profile", href: "/about#company" },
-      //     { label: "Governance & board", href: "/about#governance" },
-      //     { label: "Achievements & awards", href: "/about#achievements" },
-      //   ],
-      // },
-      // {
-      //   title: "Resources",
-      //   items: [
-      //     { label: "Corporate timeline", href: "/about#timeline" },
-      //     { label: "News & updates", href: "/about#news" },
-      //   ],
-      // },
+      {
+        title: "Company",
+        items: [
+          { label: "Company profile", href: "/about#company" },
+          { label: "Governance & board", href: "/about#governance" },
+          { label: "Achievements & awards", href: "/about#achievements" },
+        ],
+      },
+      {
+        title: "Resources",
+        items: [
+          { label: "Corporate timeline", href: "/about#timeline" },
+          { label: "News & updates", href: "/about#news" },
+        ],
+      },
     ],
   },
   {
@@ -49,43 +49,26 @@ export const megaMenuGroups: MegaMenuGroup[] = [
       {
         title: "Core Business Services",
         items: [
-          { label: "Trading", href: "/services#trading" },
-          { label: "Import & Sourcing", href: "/services#import" },
-          { label: "Export & Distribution", href: "/services#export" },
-          {
-            label: "Manufacturing & Production",
-            href: "/services#manufacturing",
-          },
+          { label: "Trading", href: "/services/core#trading" },
+          { label: "Import & Sourcing", href: "/services/core#import" },
+          { label: "Export & Distribution", href: "/services/core#export" },
+          { label: "Manufacturing & Production", href: "/services/core#manufacturing" },
         ],
       },
       {
         title: "Retail & Consumer Solutions",
         items: [
-          { label: "Household Retail & Credit", href: "/services#retail" },
-          {
-            label: "Strategic Partnership Programs",
-            href: "/services#partnerships",
-          },
-          { label: "After-Sales Support Services", href: "/services#support" },
-          {
-            label: "Strategic Partnership Programs has to be changed",
-            href: "/services#import",
-          },
-          {
-            label: "After-Sales Support Services this has to be changed",
-            href: "/services#manufacturing",
-          },
+          { label: "Household Retail & Credit", href: "/services/retail#retail" },
+          { label: "Strategic Partnership Programs", href: "/services/retail#partnerships" },
+          { label: "After-Sales Support Services", href: "/services/retail#support" },
         ],
       },
       {
         title: "Strategic Growth Services",
         items: [
-          { label: "Mining Industry Solutions", href: "/services#export" },
-          {
-            label: "Vehicle Assembly Operations",
-            href: "/services#manufacturing",
-          },
-          { label: "Joint Venture Partnerships", href: "/services#trading" },
+          { label: "Mining Industry Solutions", href: "/services/growth#mining" },
+          { label: "Vehicle Assembly Operations", href: "/services/growth#assembly" },
+          { label: "Joint Venture Partnerships", href: "/services/growth#joint-venture" },
         ],
       },
     ],
@@ -97,17 +80,17 @@ export const megaMenuGroups: MegaMenuGroup[] = [
       {
         title: "Household Goods",
         items: [
-          { label: "Home Appliances", href: "/products#household" },
-          { label: "Furniture & Decor", href: "/products#household" },
-          { label: "Kitchenware", href: "/products#household" },
+          { label: "Home Appliances", href: "/products/household#home-appliances" },
+          { label: "Furniture & Decor", href: "/products/household#furniture-decor" },
+          { label: "Kitchenware", href: "/products/household#kitchenware" },
         ],
       },
       {
         title: "Electronics & Tech",
         items: [
-          { label: "Smartphones & Tablets", href: "/products#electronics" },
-          { label: "Computers & Accessories", href: "/products#electronics" },
-          { label: "Audio & Video Equipment", href: "/products#electronics" },
+          { label: "Smartphones & Tablets", href: "/products/electronics#smartphones-tablets" },
+          { label: "Computers & Accessories", href: "/products/electronics#computers-accessories" },
+          { label: "Audio & Video Equipment", href: "/products/electronics#audio-video" },
         ],
       },
       {
@@ -115,10 +98,10 @@ export const megaMenuGroups: MegaMenuGroup[] = [
         items: [
           {
             label: "Vehicle Parts & Accessories",
-            href: "/products#automotive",
+            href: "/products/automotive#vehicle-parts",
           },
-          { label: "Machinery & Tools", href: "/products#automotive" },
-          { label: "Building Materials", href: "/products#automotive" },
+          { label: "Machinery & Tools", href: "/products/automotive#machinery-tools" },
+          { label: "Building Materials", href: "/products/automotive#building-materials" },
         ],
       },
     ],

@@ -3,7 +3,7 @@ import Image from "next/image";
 import Link from "next/link";
 import { useEffect, useRef, useState } from "react";
 
-const serviceCards = [
+export const serviceCards = [
   {
     key: "trading",
     title: "Trading",
@@ -19,7 +19,7 @@ const serviceCards = [
       "Local manufacturing",
       "Global partners",
     ],
-    href: "/services#trading",
+    href: "/services/core#trading",
   },
   {
     key: "import",
@@ -33,7 +33,7 @@ const serviceCards = [
     ],
     overlay: "from-slate-900/80 via-slate-800/60 to-slate-600/40",
     tags: ["Electronics", "Appliances", "After-sales"],
-    href: "/services#import",
+    href: "/services/core#import",
   },
   {
     key: "export",
@@ -48,7 +48,7 @@ const serviceCards = [
     ],
     overlay: "from-black/80 via-black/40 to-amber-900/30",
     tags: ["Coffee", "Sesame", "Pulses"],
-    href: "/services#export",
+    href: "/services/core#export",
   },
   {
     key: "manufacturing",
@@ -63,11 +63,96 @@ const serviceCards = [
     ],
     overlay: "from-amber-900/80 via-amber-700/50 to-amber-400/30",
     tags: ["Residential", "Commercial", "Custom build"],
-    href: "/services#manufacturing",
+    href: "/services/core#manufacturing",
+  },
+  {
+    key: "retail",
+    title: "Household Retail & Credit",
+    description:
+      "Nationwide retail and wholesale programs for appliances, electronics, and household goods with flexible credit and after-sales support.",
+    images: [
+      "https://images.unsplash.com/photo-1489515217757-5fd1be406fef?auto=format&fit=crop&w=1200&q=80",
+      "https://images.unsplash.com/photo-1505238680356-667803448bb6?auto=format&fit=crop&w=1200&q=80",
+    ],
+    overlay: "from-slate-900/80 via-slate-700/50 to-slate-500/30",
+    tags: ["Retail network", "Credit programs", "After-sales"],
+    href: "/services/retail#retail",
+  },
+  {
+    key: "partnerships",
+    title: "Strategic Partnerships",
+    description:
+      "Structured partner programs for dealers, distributors, and co-branded initiatives that accelerate market entry and growth.",
+    images: [
+      "https://images.unsplash.com/photo-1520607162513-77705c0f0d4a?auto=format&fit=crop&w=1200&q=80",
+      "https://images.unsplash.com/photo-1521791055366-0d553872125f?auto=format&fit=crop&w=1200&q=80",
+    ],
+    overlay: "from-blue-900/80 via-blue-700/50 to-blue-400/30",
+    tags: ["Dealer enablement", "Merchandising", "Training"],
+    href: "/services/retail#partnerships",
+  },
+  {
+    key: "support",
+    title: "After-Sales Support",
+    description:
+      "Warranty, service centers, and spare-parts logistics to keep products running reliably for consumers and institutional buyers.",
+    images: [
+      "https://images.unsplash.com/photo-1582719478250-c89cae4dc85b?auto=format&fit=crop&w=1200&q=80",
+      "https://images.unsplash.com/photo-1520607162513-77705c0f0d4a?auto=format&fit=crop&w=1200&q=80",
+    ],
+    overlay: "from-emerald-900/80 via-emerald-700/50 to-emerald-400/30",
+    tags: ["Warranty", "Service hubs", "Spare parts"],
+    href: "/services/retail#support",
+  },
+  {
+    key: "mining",
+    title: "Mining Industry Solutions",
+    description:
+      "Early-stage mining concessions and feasibility programs with partners for exploration, offtake, and project finance.",
+    images: [
+      "https://images.unsplash.com/photo-1508387024700-9fe5c0b37f79?auto=format&fit=crop&w=1200&q=80",
+      "https://images.unsplash.com/photo-1502086223501-7ea6ecd79368?auto=format&fit=crop&w=1200&q=80",
+    ],
+    overlay: "from-gray-900/80 via-amber-800/50 to-amber-500/30",
+    tags: ["Exploration", "Offtake", "Risk management"],
+    href: "/services/growth#mining",
+  },
+  {
+    key: "assembly",
+    title: "Vehicle Assembly Operations",
+    description:
+      "Concept-stage vehicle and equipment assembly lines with OEM partners, targeting local and regional demand.",
+    images: [
+      "https://images.unsplash.com/photo-1470337458703-46ad1756a187?auto=format&fit=crop&w=1200&q=80",
+      "https://images.unsplash.com/photo-1542362567-b07e54358753?auto=format&fit=crop&w=1200&q=80",
+    ],
+    overlay: "from-slate-900/80 via-slate-700/50 to-slate-400/30",
+    tags: ["OEM partnerships", "Localization", "Assembly"],
+    href: "/services/growth#assembly",
+  },
+  {
+    key: "joint-venture",
+    title: "Joint Venture Partnerships",
+    description:
+      "Equity JV and PPP formats for large-scale industrial, agriculture, and infrastructure projects across Ethiopia.",
+    images: [
+      "https://images.unsplash.com/photo-1520607162513-77705c0f0d4a?auto=format&fit=crop&w=1200&q=80",
+      "https://images.unsplash.com/photo-1503389152951-9f343605f61e?auto=format&fit=crop&w=1200&q=80",
+    ],
+    overlay: "from-indigo-900/80 via-indigo-700/50 to-indigo-400/30",
+    tags: ["Equity JV", "PPP", "Investment"],
+    href: "/services/growth#joint-venture",
   },
 ];
 
-export function ServicesSection() {
+type ServicesSectionProps = {
+  heading?: string;
+  description?: string;
+  id?: string;
+  keys?: string[];
+};
+
+export function ServicesSection({ heading = "Services", description, id = "services", keys }: ServicesSectionProps) {
   // Large featured Trading card with wider image area
   function TradingCard({ card }: { card: (typeof serviceCards)[number] }) {
     const [index, setIndex] = useState(0);
@@ -279,7 +364,7 @@ export function ServicesSection() {
     }, [card.images.length]);
 
     return (
-      <article className="group grid gap-6 rounded-lg border border-white/60 bg-white shadow-sm lg:grid-cols-2">
+      <article id={card.key} className="group grid gap-6 rounded-lg border border-white/60 bg-white shadow-sm lg:grid-cols-2">
         <div
           ref={containerRef}
           onMouseEnter={() => stop()}
@@ -353,9 +438,11 @@ export function ServicesSection() {
     );
   }
 
+  const filtered = keys ? serviceCards.filter((c) => keys.includes(c.key)) : serviceCards;
+
   return (
     <section
-      id="services"
+      id={id}
       className="relative space-y-8 px-6 py-10 sm:px-10 lg:px-16"
     >
       <div className="mx-auto max-w-7xl">
@@ -364,19 +451,16 @@ export function ServicesSection() {
             Services
           </p>
           <h2 className="mt-2 text-4xl font-semibold text-gray-900 sm:text-5xl font-sans">
-            Integrated capabilities built for global trade
+            {heading}
           </h2>
           <p className="mt-3 max-w-3xl mx-auto text-lg text-gray-700 font-sans">
-            Export, import, trading and manufacturing connected through strict
-            quality control, partner networks and local expertise. Trading is
-            our core: retail distribution, credit-based customer models and
-            in-house manufacturing support make quality products accessible
-            across Ethiopia and the region.
+            {description ??
+              "Export, import, trading and manufacturing connected through strict quality control, partner networks and local expertise."}
           </p>
         </div>
 
         <div className="grid gap-6">
-          {serviceCards.map((card) =>
+          {filtered.map((card) =>
             card.key === "trading" ? (
               <TradingCard key={card.key} card={card} />
             ) : (
