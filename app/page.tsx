@@ -15,7 +15,7 @@ export default function Home() {
       <ProductsSection />
       <CollaboratorsSection />
       <WorkingWithSection />
-      <ContactSection />
+   
     </div>
   );
 }
