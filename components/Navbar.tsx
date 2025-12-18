@@ -180,7 +180,11 @@ export function Navbar() {
                                 <Link
                                   href={item.href}
                                   className="block rounded-xl px-3 py-2 text-left text-sm text-gray-700 transition hover:bg-gray-50 hover:text-gray-900"
-                                  onClick={() => setOpenDesktopMenu(null)}
+                                  onClick={(e) => {
+                                    if (scrollToHash(item.href))
+                                      e.preventDefault();
+                                    setOpenDesktopMenu(null);
+                                  }}
                                 >
                                   {item.label}
                                 </Link>

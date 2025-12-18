@@ -2,8 +2,7 @@ const sections = [
   {
     id: "smartphones-tablets",
     title: "Smartphones & Tablets",
-    lead:
-      "Devices and wearables with localized specs, warranty support, and attach programs for accessories and services.",
+    lead: "Devices and wearables with localized specs, warranty support, and attach programs for accessories and services.",
     points: [
       "Tiered device lineups with language support and regional power/charging standards.",
       "Warranty and service center coverage with spare-parts buffers on fast movers.",
@@ -25,8 +24,7 @@ const sections = [
   {
     id: "computers-accessories",
     title: "Computers & Accessories",
-    lead:
-      "Laptops, desktops, peripherals, and displays for consumer and commercial buyers with reliable sourcing and SLAs.",
+    lead: "Laptops, desktops, peripherals, and displays for consumer and commercial buyers with reliable sourcing and SLAs.",
     points: [
       "Spec tiers across ultrabooks, creator, and business lines with regional keyboards and power standards.",
       "Peripheral bundles (monitors, docks, input) with warranty and swap options.",
@@ -48,8 +46,7 @@ const sections = [
   {
     id: "audio-video",
     title: "Audio & Video Equipment",
-    lead:
-      "Home and professional AV including displays, projectors, PA, and conferencing kits with installation support.",
+    lead: "Home and professional AV including displays, projectors, PA, and conferencing kits with installation support.",
     points: [
       "Segmented assortments for home entertainment, retail fit-outs, and corporate AV needs.",
       "Site survey and install partners with commissioning checklists and training.",
@@ -82,11 +79,15 @@ export default function ElectronicsProductsPage() {
   return (
     <div className="space-y-12 px-4 pb-24 pt-14 sm:px-8 lg:px-16 bg-[radial-gradient(circle_at_16%_18%,rgba(255,255,255,0.72),transparent_35%),radial-gradient(circle_at_84%_10%,rgba(191,219,254,0.42),transparent_30%)]">
       <header className="mx-auto max-w-5xl text-center space-y-3">
-        <p className="text-sm uppercase tracking-[0.25em] text-amber-700">Electronics & Tech</p>
-        <h1 className="text-4xl font-semibold text-gray-900 sm:text-5xl">Mobility, Computing, AV</h1>
+        <p className="text-sm uppercase tracking-[0.25em] text-amber-700">
+          Electronics & Tech
+        </p>
+        <h1 className="text-4xl font-semibold text-gray-900 sm:text-5xl">
+          Mobility, Computing, AV
+        </h1>
         <p className="text-lg text-gray-700">
-          Expanded view of our electronics portfolio with anchor links aligned to the Products column: mobility, computing, and
-          audio/video systems.
+          Expanded view of our electronics portfolio with anchor links aligned
+          to the Products column: mobility, computing, and audio/video systems.
         </p>
       </header>
 
@@ -113,12 +114,20 @@ export default function ElectronicsProductsPage() {
               <div className="p-6 sm:p-8 space-y-4">
                 <div className="flex flex-wrap items-center justify-between gap-3">
                   <div>
-                    <p className="text-xs uppercase tracking-[0.3em] text-amber-700">Electronics column</p>
-                    <h2 className="mt-2 text-2xl font-bold text-gray-900">{section.title}</h2>
+                    <p className="text-xs uppercase tracking-[0.3em] text-amber-700">
+                      Electronics column
+                    </p>
+                    <h2 className="mt-2 text-2xl font-bold text-gray-900">
+                      {section.title}
+                    </h2>
                   </div>
                   <div className="flex flex-wrap gap-2">
                     {section.bullets.map((b) => (
-                      <StatPill key={`${section.id}-${b.label}`} label={b.label} value={b.value} />
+                      <StatPill
+                        key={`${section.id}-${b.label}`}
+                        label={b.label}
+                        value={b.value}
+                      />
                     ))}
                   </div>
                 </div>
@@ -128,7 +137,10 @@ export default function ElectronicsProductsPage() {
                 <ul className="space-y-2 text-sm text-gray-700">
                   {section.points.map((p, i) => (
                     <li key={`${section.id}-pt-${i}`} className="flex gap-2">
-                      <span className="mt-1 h-1.5 w-1.5 rounded-full bg-amber-700" aria-hidden="true" />
+                      <span
+                        className="mt-1 h-1.5 w-1.5 rounded-full bg-amber-700"
+                        aria-hidden="true"
+                      />
                       <span>{p}</span>
                     </li>
                   ))}
@@ -142,7 +154,10 @@ export default function ElectronicsProductsPage() {
               </div>
 
               <div className="relative h-full min-h-[260px] bg-gray-50">
-                <div className="absolute inset-0 bg-gradient-to-br from-black/20 via-transparent to-blue-900/10" aria-hidden="true" />
+                <div
+                  className="absolute inset-0 bg-gradient-to-br from-black/20 via-transparent to-blue-900/10"
+                  aria-hidden="true"
+                />
                 <img
                   src={section.image}
                   alt={`${section.title} illustrative`}

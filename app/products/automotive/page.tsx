@@ -2,8 +2,7 @@ const sections = [
   {
     id: "vehicle-parts",
     title: "Vehicle Parts & Accessories",
-    lead:
-      "Vehicle parts and accessories for workshops and fleets with verified quality, stocking programs, and training support.",
+    lead: "Vehicle parts and accessories for workshops and fleets with verified quality, stocking programs, and training support.",
     points: [
       "Brake, suspension, filters, and electrical components sourced with supplier QA and batch testing.",
       "Stocking ladders for workshops and fleets with min/max programs and rapid replenishment.",
@@ -25,8 +24,7 @@ const sections = [
   {
     id: "machinery-tools",
     title: "Machinery & Tools",
-    lead:
-      "Machinery spares, tools, and consumables for construction, agri, and light industrial users.",
+    lead: "Machinery spares, tools, and consumables for construction, agri, and light industrial users.",
     points: [
       "Critical spares planning for loaders, generators, and pumps with lead-time buffers.",
       "Lubricant programs aligned to OEM specs with sampling and condition monitoring options.",
@@ -48,8 +46,7 @@ const sections = [
   {
     id: "building-materials",
     title: "Building Materials",
-    lead:
-      "Selective construction materials and fixtures for projects, with quality control and logistics built-in.",
+    lead: "Selective construction materials and fixtures for projects, with quality control and logistics built-in.",
     points: [
       "Curated lines of finishes, fixtures, and hardware suited to local climates and codes.",
       "QC and certification where applicable; batch tracking for traceability.",
@@ -82,11 +79,15 @@ export default function AutomotiveProductsPage() {
   return (
     <div className="space-y-12 px-4 pb-24 pt-14 sm:px-8 lg:px-16 bg-[radial-gradient(circle_at_14%_18%,rgba(255,255,255,0.72),transparent_35%),radial-gradient(circle_at_86%_10%,rgba(226,232,240,0.5),transparent_30%)]">
       <header className="mx-auto max-w-5xl text-center space-y-3">
-        <p className="text-sm uppercase tracking-[0.25em] text-amber-700">Automotive & Industrial</p>
-        <h1 className="text-4xl font-semibold text-gray-900 sm:text-5xl">Parts, Industrial, Materials</h1>
+        <p className="text-sm uppercase tracking-[0.25em] text-amber-700">
+          Automotive & Industrial
+        </p>
+        <h1 className="text-4xl font-semibold text-gray-900 sm:text-5xl">
+          Parts, Industrial, Materials
+        </h1>
         <p className="text-lg text-gray-700">
-          Deeper detail for the automotive and industrial column: vehicle parts, equipment spares, and select building materials
-          with logistics and QA.
+          Deeper detail for the automotive and industrial column: vehicle parts,
+          equipment spares, and select building materials with logistics and QA.
         </p>
       </header>
 
@@ -113,12 +114,20 @@ export default function AutomotiveProductsPage() {
               <div className="p-6 sm:p-8 space-y-4">
                 <div className="flex flex-wrap items-center justify-between gap-3">
                   <div>
-                    <p className="text-xs uppercase tracking-[0.3em] text-amber-700">Automotive column</p>
-                    <h2 className="mt-2 text-2xl font-bold text-gray-900">{section.title}</h2>
+                    <p className="text-xs uppercase tracking-[0.3em] text-amber-700">
+                      Automotive column
+                    </p>
+                    <h2 className="mt-2 text-2xl font-bold text-gray-900">
+                      {section.title}
+                    </h2>
                   </div>
                   <div className="flex flex-wrap gap-2">
                     {section.bullets.map((b) => (
-                      <StatPill key={`${section.id}-${b.label}`} label={b.label} value={b.value} />
+                      <StatPill
+                        key={`${section.id}-${b.label}`}
+                        label={b.label}
+                        value={b.value}
+                      />
                     ))}
                   </div>
                 </div>
@@ -128,7 +137,10 @@ export default function AutomotiveProductsPage() {
                 <ul className="space-y-2 text-sm text-gray-700">
                   {section.points.map((p, i) => (
                     <li key={`${section.id}-pt-${i}`} className="flex gap-2">
-                      <span className="mt-1 h-1.5 w-1.5 rounded-full bg-amber-700" aria-hidden="true" />
+                      <span
+                        className="mt-1 h-1.5 w-1.5 rounded-full bg-amber-700"
+                        aria-hidden="true"
+                      />
                       <span>{p}</span>
                     </li>
                   ))}
@@ -142,7 +154,10 @@ export default function AutomotiveProductsPage() {
               </div>
 
               <div className="relative h-full min-h-[260px] bg-gray-50">
-                <div className="absolute inset-0 bg-gradient-to-br from-black/20 via-transparent to-slate-900/10" aria-hidden="true" />
+                <div
+                  className="absolute inset-0 bg-gradient-to-br from-black/20 via-transparent to-slate-900/10"
+                  aria-hidden="true"
+                />
                 <img
                   src={section.image}
                   alt={`${section.title} illustrative`}

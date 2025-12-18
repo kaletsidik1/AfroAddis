@@ -2,8 +2,7 @@ const sections = [
   {
     id: "mining",
     title: "Mining Industry Solutions",
-    lead:
-      "Early-stage concessions, feasibility, and offtake programs with partners for exploration, development, and project finance.",
+    lead: "Early-stage concessions, feasibility, and offtake programs with partners for exploration, development, and project finance.",
     points: [
       "Geological mapping, sampling, and contractor oversight to de-risk early phases.",
       "Offtake and JV structuring that aligns operator, financier, and buyer incentives.",
@@ -25,8 +24,7 @@ const sections = [
   {
     id: "assembly",
     title: "Vehicle Assembly Operations",
-    lead:
-      "Concept-to-launch vehicle and equipment assembly with OEM partners, targeting local and regional demand via localized SKD/CKD lines.",
+    lead: "Concept-to-launch vehicle and equipment assembly with OEM partners, targeting local and regional demand via localized SKD/CKD lines.",
     points: [
       "Plant layout, line design, and SOPs for pilot and scale phases.",
       "Homologation, testing, and quality gates aligned to OEM standards.",
@@ -48,8 +46,7 @@ const sections = [
   {
     id: "joint-venture",
     title: "Joint Venture Partnerships",
-    lead:
-      "Equity JV and PPP formats for industrial, agriculture, and infrastructure projects with disciplined governance and capital stacks.",
+    lead: "Equity JV and PPP formats for industrial, agriculture, and infrastructure projects with disciplined governance and capital stacks.",
     points: [
       "Deal structuring that balances equity, debt, and offtake-linked funding.",
       "Governance and KPI frameworks to keep partners aligned post-close.",
@@ -82,11 +79,16 @@ export default function StrategicGrowthServicesPage() {
   return (
     <div className="space-y-12 px-4 pb-24 pt-14 sm:px-8 lg:px-16 bg-[radial-gradient(circle_at_14%_18%,rgba(255,255,255,0.72),transparent_35%),radial-gradient(circle_at_86%_10%,rgba(226,232,240,0.55),transparent_30%)]">
       <header className="mx-auto max-w-5xl text-center space-y-3">
-        <p className="text-sm uppercase tracking-[0.25em] text-amber-700">Strategic Growth Services</p>
-        <h1 className="text-4xl font-semibold text-gray-900 sm:text-5xl">Mining, Assembly, Joint Ventures</h1>
+        <p className="text-sm uppercase tracking-[0.25em] text-amber-700">
+          Strategic Growth Services
+        </p>
+        <h1 className="text-4xl font-semibold text-gray-900 sm:text-5xl">
+          Mining, Assembly, Joint Ventures
+        </h1>
         <p className="text-lg text-gray-700">
-          The growth column covers early-stage mining, vehicle assembly programs, and structured joint ventures. Each section
-          below mirrors the Services menu anchors for quick navigation.
+          The growth column covers early-stage mining, vehicle assembly
+          programs, and structured joint ventures. Each section below mirrors
+          the Services menu anchors for quick navigation.
         </p>
       </header>
 
@@ -113,12 +115,20 @@ export default function StrategicGrowthServicesPage() {
               <div className="p-6 sm:p-8 space-y-4">
                 <div className="flex flex-wrap items-center justify-between gap-3">
                   <div>
-                    <p className="text-xs uppercase tracking-[0.3em] text-amber-700">Growth column</p>
-                    <h2 className="mt-2 text-2xl font-bold text-gray-900">{section.title}</h2>
+                    <p className="text-xs uppercase tracking-[0.3em] text-amber-700">
+                      Growth column
+                    </p>
+                    <h2 className="mt-2 text-2xl font-bold text-gray-900">
+                      {section.title}
+                    </h2>
                   </div>
                   <div className="flex flex-wrap gap-2">
                     {section.bullets.map((b) => (
-                      <StatPill key={`${section.id}-${b.label}`} label={b.label} value={b.value} />
+                      <StatPill
+                        key={`${section.id}-${b.label}`}
+                        label={b.label}
+                        value={b.value}
+                      />
                     ))}
                   </div>
                 </div>
@@ -128,7 +138,10 @@ export default function StrategicGrowthServicesPage() {
                 <ul className="space-y-2 text-sm text-gray-700">
                   {section.points.map((p, i) => (
                     <li key={`${section.id}-pt-${i}`} className="flex gap-2">
-                      <span className="mt-1 h-1.5 w-1.5 rounded-full bg-amber-700" aria-hidden="true" />
+                      <span
+                        className="mt-1 h-1.5 w-1.5 rounded-full bg-amber-700"
+                        aria-hidden="true"
+                      />
                       <span>{p}</span>
                     </li>
                   ))}
@@ -142,7 +155,10 @@ export default function StrategicGrowthServicesPage() {
               </div>
 
               <div className="relative h-full min-h-[260px] bg-gray-50">
-                <div className="absolute inset-0 bg-gradient-to-br from-black/20 via-transparent to-slate-900/10" aria-hidden="true" />
+                <div
+                  className="absolute inset-0 bg-gradient-to-br from-black/20 via-transparent to-slate-900/10"
+                  aria-hidden="true"
+                />
                 <img
                   src={section.image}
                   alt={`${section.title} illustrative`}

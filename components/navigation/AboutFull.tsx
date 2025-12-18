@@ -1,5 +1,6 @@
 "use client";
 import React, { useEffect, useMemo, useRef, useState } from "react";
+import Image from "next/image";
 import { megaMenuGroups } from "@/components/navigation/menuConfig";
 
 export default function AboutFull() {
@@ -17,7 +18,7 @@ export default function AboutFull() {
     "Achievements & awards": "achievements",
     "Corporate timeline": "timeline",
     "News & updates": "news",
-    "Resources": "resources",
+    Resources: "resources",
   };
 
   // Use a fixed ordered list for the About subnav
@@ -56,8 +57,8 @@ export default function AboutFull() {
       },
       {
         root: null,
-        rootMargin: "-20% 0px -60% 0px", // Adjust these values as needed
-        threshold: 0.1, // Simpler threshold
+        rootMargin: "-30% 0px -50% 0px",
+        threshold: 0.1,
       }
     );
 
@@ -113,6 +114,36 @@ export default function AboutFull() {
     <div className="w-full bg-white/90">
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
         <div className="flex flex-col gap-6 py-6">
+          {/* Hero banner */}
+          <div className="relative overflow-hidden rounded-2xl border border-gray-100 bg-white shadow-sm">
+            <div className="grid lg:grid-cols-2">
+              <div className="relative h-44 sm:h-64 lg:h-full">
+                <Image
+                  src="https://images.unsplash.com/photo-1529333166437-7750a6dd5a70?auto=format&fit=crop&w=1600&q=80"
+                  alt="Afro Addis team and operations"
+                  fill
+                  className="object-cover"
+                  sizes="(min-width:1024px) 50vw, 100vw"
+                  priority
+                />
+                <div className="absolute inset-0 bg-gradient-to-tr from-black/30 via-transparent to-red-900/10" />
+              </div>
+              <div className="p-6 sm:p-8">
+                <p className="text-xs uppercase tracking-[0.3em] text-red-700">
+                  About Afro Addis
+                </p>
+                <h1 className="mt-2 text-3xl font-semibold text-gray-900 sm:text-4xl">
+                  Company, Governance, Achievements & Resources
+                </h1>
+                <p className="mt-3 text-sm text-gray-700">
+                  KYT Trading PLC (AFROADDIS) is a diversified Ethiopian group
+                  operating across trading/export, import/retail, and
+                  manufacturing, with growth initiatives in mining and assembly.
+                  Use the sub navigation below to jump to any section.
+                </p>
+              </div>
+            </div>
+          </div>
           {/* Subnav */}
           <div className="sticky top-14 z-30 -mx-4 px-4 sm:mx-0 sm:px-0">
             <div className="overflow-x-auto">
@@ -139,71 +170,42 @@ export default function AboutFull() {
 
           {/* Rest of your sections remain the same */}
           <div className="space-y-12">
-            <section id="company" className="prose max-w-none">
+            <section id="company" className="prose max-w-none scroll-mt-24">
               <h2>Company profile</h2>
               <p className="text-gray-700">
-                KYT Trading PLC (AFROADDIS) is a diversified Ethiopian group
-                founded in 2015 and headquartered in Addis Ababa. We operate
-                across trading and export (coffee, pulses, oilseeds), import and
-                retail (appliances, electronics, household), and manufacturing
-                (furniture and woodwork), with new ventures in mining and
-                assembly. Our footprint serves domestic retail/wholesale
-                partners and global buyers in Africa, the EU, the Middle East,
-                and North America.
+                Founded in 2015 in Addis Ababa, we operate across trading &
+                export (coffee, pulses, oilseeds), import & retail (appliances,
+                electronics, household), and manufacturing (furniture &
+                woodwork), with new initiatives in mining and assembly. We serve
+                domestic retail/wholesale partners and global buyers in Africa,
+                the EU, the Middle East, and North America.
               </p>
               <ul className="text-gray-700">
+                <li>Registered in Ethiopia with multi-division operations.</li>
+                <li>Value pillars: trust, integrity, professionalism.</li>
                 <li>
-                  Registered in Ethiopia with a multi-division operating model.
-                </li>
-                <li>
-                  Value pillars: trust, integrity, professionalism; consistent
-                  quality and on-time delivery.
-                </li>
-                <li>
-                  Partner-centric: financeable trade flows, transparent
-                  documentation, and after-sales support.
+                  Partner-centric: transparent documentation and after-sales
+                  support.
                 </li>
               </ul>
             </section>
 
-            <section id="governance" className="prose max-w-none">
+            <section id="governance" className="prose max-w-none scroll-mt-24">
               <h2>Governance &amp; board</h2>
               <p className="text-gray-700">
-                Governance is structured with board and advisory oversight on
-                strategy, capital allocation, and risk. Audit and risk functions
-                enforce policies for procurement, FX, logistics, and operational
-                controls, with periodic audits and SOPs for quality and
-                documentation. Governance is structured with board and advisory
-                oversight on strategy, capital allocation, and risk. Audit and
-                risk functions enforce policies for procurement, FX, logistics,
-                and operational controls, with periodic audits and SOPs for
-                quality and documentation. Governance is structured with board
-                and advisory oversight on strategy, capital allocation, and
-                risk. Audit and risk functions enforce policies for procurement,
-                FX, logistics, and operational controls, with periodic audits
-                and SOPs for quality and documentation. Governance is structured
-                with board and advisory oversight on strategy, capital
-                allocation, and risk. Audit and risk functions enforce policies
-                for procurement, FX, logistics, and operational controls, with
-                periodic audits and SOPs for quality and documentation.
-                Governance is structured with board and advisory oversight on
-                strategy, capital allocation, and risk. Audit and risk functions
-                enforce policies for procurement, FX, logistics, and operational
-                controls, with periodic audits and SOPs for quality and
-                documentation. Governance is structured with board and advisory
-                oversight on strategy, capital allocation, and risk. Audit and
-                risk functions enforce policies for procurement, FX, logistics,
-                and operational controls, with periodic audits and SOPs for
-                quality and documentation.
+                Governance is overseen by a board and advisors focused on
+                strategy, capital allocation, and risk. Audit & risk functions
+                enforce policies for procurement, FX, logistics, and operations,
+                with periodic audits and SOPs for quality and documentation.
               </p>
               <ul className="text-gray-700">
                 <li>
-                  Board &amp; advisors: guide growth bets, partnerships, and
-                  compliance posture.
+                  Board &amp; advisors: guide growth bets and compliance
+                  posture.
                 </li>
                 <li>
                   Audit &amp; risk: controls for supply chain, finance, and
-                  trade documentation.
+                  documentation.
                 </li>
                 <li>
                   Compliance: aligned to Ethiopian regulations and international
@@ -212,21 +214,15 @@ export default function AboutFull() {
               </ul>
             </section>
 
-            <section id="achievements" className="prose max-w-none">
+            <section
+              id="achievements"
+              className="prose max-w-none scroll-mt-24"
+            >
               <h2>Achievements &amp; awards</h2>
               <ul className="text-gray-700">
                 <li>
                   Best Taxpayer Award for transparent reporting and compliant
-                  trade operations. Best Taxpayer Award for transparent
-                  reporting and compliant trade operations. Best Taxpayer Award
-                  for transparent reporting and compliant trade operations. Best
-                  Taxpayer Award for transparent reporting and compliant trade
-                  operations. Best Taxpayer Award for transparent reporting and
-                  compliant trade operations. Best Taxpayer Award for
-                  transparent reporting and compliant trade operations. Best
-                  Taxpayer Award for transparent reporting and compliant trade
-                  operations. Best Taxpayer Award for transparent reporting and
-                  compliant trade operations.
+                  trade operations.
                 </li>
                 <li>
                   Active member of Addis Ababa Chamber of Commerce and sector
@@ -239,7 +235,7 @@ export default function AboutFull() {
               </ul>
             </section>
 
-            <section id="timeline" className="prose max-w-none">
+            <section id="timeline" className="prose max-w-none scroll-mt-24">
               <h2>Corporate timeline</h2>
               <ul className="text-gray-700">
                 <li>
@@ -258,7 +254,7 @@ export default function AboutFull() {
               </ul>
             </section>
 
-            <section id="news" className="prose max-w-none">
+            <section id="news" className="prose max-w-none scroll-mt-24">
               <h2>News &amp; updates</h2>
               <ul className="text-gray-700">
                 <li>
@@ -276,7 +272,7 @@ export default function AboutFull() {
               </ul>
             </section>
 
-            <section id="resources" className="prose max-w-none">
+            <section id="resources" className="prose max-w-none scroll-mt-24">
               <h2>Resources</h2>
               <ul className="text-gray-700">
                 <li>

@@ -2,8 +2,7 @@ const sections = [
   {
     id: "trading",
     title: "Trading",
-    lead:
-      "Our trading arm connects Ethiopia’s suppliers and global buyers through disciplined sourcing, financing, and distribution.",
+    lead: "Our trading arm connects Ethiopia’s suppliers and global buyers through disciplined sourcing, financing, and distribution.",
     points: [
       "Retail & wholesale programs for household goods with credit options and merchandising support.",
       "Partner finance and trade terms to move inventory quickly while preserving margins.",
@@ -25,8 +24,7 @@ const sections = [
   {
     id: "import",
     title: "Import & Sourcing",
-    lead:
-      "We source global-quality appliances, electronics, and materials with reliable after-sales and localized assortments.",
+    lead: "We source global-quality appliances, electronics, and materials with reliable after-sales and localized assortments.",
     points: [
       "Category planning for electronics, appliances, and household goods tailored to Ethiopian demand.",
       "Vendor selection, QC at origin, and freight consolidation to control landed cost and availability.",
@@ -48,8 +46,7 @@ const sections = [
   {
     id: "export",
     title: "Export & Distribution",
-    lead:
-      "Export programs for coffee, pulses, oilseeds, and specialty crops backed by traceability and QC.",
+    lead: "Export programs for coffee, pulses, oilseeds, and specialty crops backed by traceability and QC.",
     points: [
       "Origin sourcing across Sidama, Yirgacheffe, Guji, Jimma, and more with wet and dry mills.",
       "Grading, cupping, moisture and defect checks, and compliant export documentation.",
@@ -71,8 +68,7 @@ const sections = [
   {
     id: "manufacturing",
     title: "Manufacturing & Production",
-    lead:
-      "Furniture and woodwork manufacturing for residential, hospitality, and corporate projects.",
+    lead: "Furniture and woodwork manufacturing for residential, hospitality, and corporate projects.",
     points: [
       "Custom and catalog lines for living, kitchen, bedroom, and commercial fit-outs.",
       "Material sourcing that combines local timber with imported finishes for durability and aesthetics.",
@@ -105,11 +101,16 @@ export default function CoreServicesPage() {
   return (
     <div className="space-y-12 px-4 pb-24 pt-14 sm:px-8 lg:px-16 bg-[radial-gradient(circle_at_20%_20%,rgba(255,255,255,0.7),transparent_35%),radial-gradient(circle_at_80%_10%,rgba(255,237,213,0.45),transparent_30%)]">
       <header className="mx-auto max-w-5xl text-center space-y-3">
-        <p className="text-sm uppercase tracking-[0.25em] text-amber-700">Core Business Services</p>
-        <h1 className="text-4xl font-semibold text-gray-900 sm:text-5xl">Trading, Import, Export, Manufacturing</h1>
+        <p className="text-sm uppercase tracking-[0.25em] text-amber-700">
+          Core Business Services
+        </p>
+        <h1 className="text-4xl font-semibold text-gray-900 sm:text-5xl">
+          Trading, Import, Export, Manufacturing
+        </h1>
         <p className="text-lg text-gray-700">
-          This page is the full detail for our core capabilities. Links from the homepage and the Services menu land here and
-          scroll to each section below.
+          This page is the full detail for our core capabilities. Links from the
+          homepage and the Services menu land here and scroll to each section
+          below.
         </p>
       </header>
 
@@ -136,12 +137,20 @@ export default function CoreServicesPage() {
               <div className="p-6 sm:p-8 space-y-4">
                 <div className="flex flex-wrap items-center justify-between gap-3">
                   <div>
-                    <p className="text-xs uppercase tracking-[0.3em] text-amber-700">Core service</p>
-                    <h2 className="mt-2 text-2xl font-bold text-gray-900">{section.title}</h2>
+                    <p className="text-xs uppercase tracking-[0.3em] text-amber-700">
+                      Core service
+                    </p>
+                    <h2 className="mt-2 text-2xl font-bold text-gray-900">
+                      {section.title}
+                    </h2>
                   </div>
                   <div className="flex flex-wrap gap-2">
                     {section.bullets.map((b) => (
-                      <StatPill key={`${section.id}-${b.label}`} label={b.label} value={b.value} />
+                      <StatPill
+                        key={`${section.id}-${b.label}`}
+                        label={b.label}
+                        value={b.value}
+                      />
                     ))}
                   </div>
                 </div>
@@ -151,7 +160,10 @@ export default function CoreServicesPage() {
                 <ul className="space-y-2 text-sm text-gray-700">
                   {section.points.map((p, i) => (
                     <li key={`${section.id}-pt-${i}`} className="flex gap-2">
-                      <span className="mt-1 h-1.5 w-1.5 rounded-full bg-amber-700" aria-hidden="true" />
+                      <span
+                        className="mt-1 h-1.5 w-1.5 rounded-full bg-amber-700"
+                        aria-hidden="true"
+                      />
                       <span>{p}</span>
                     </li>
                   ))}
@@ -165,7 +177,10 @@ export default function CoreServicesPage() {
               </div>
 
               <div className="relative h-full min-h-[260px] bg-gray-50">
-                <div className="absolute inset-0 bg-gradient-to-br from-black/20 via-transparent to-amber-900/10" aria-hidden="true" />
+                <div
+                  className="absolute inset-0 bg-gradient-to-br from-black/20 via-transparent to-amber-900/10"
+                  aria-hidden="true"
+                />
                 <img
                   src={section.image}
                   alt={`${section.title} illustrative`}

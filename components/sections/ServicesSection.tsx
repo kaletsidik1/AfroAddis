@@ -152,7 +152,12 @@ type ServicesSectionProps = {
   keys?: string[];
 };
 
-export function ServicesSection({ heading = "Services", description, id = "services", keys }: ServicesSectionProps) {
+export function ServicesSection({
+  heading = "Services",
+  description,
+  id = "services",
+  keys,
+}: ServicesSectionProps) {
   // Large featured Trading card with wider image area
   function TradingCard({ card }: { card: (typeof serviceCards)[number] }) {
     const [index, setIndex] = useState(0);
@@ -364,7 +369,10 @@ export function ServicesSection({ heading = "Services", description, id = "servi
     }, [card.images.length]);
 
     return (
-      <article id={card.key} className="group grid gap-6 rounded-lg border border-white/60 bg-white shadow-sm lg:grid-cols-2">
+      <article
+        id={card.key}
+        className="group grid gap-6 rounded-lg border border-white/60 bg-white shadow-sm lg:grid-cols-2"
+      >
         <div
           ref={containerRef}
           onMouseEnter={() => stop()}
@@ -438,7 +446,9 @@ export function ServicesSection({ heading = "Services", description, id = "servi
     );
   }
 
-  const filtered = keys ? serviceCards.filter((c) => keys.includes(c.key)) : serviceCards;
+  const filtered = keys
+    ? serviceCards.filter((c) => keys.includes(c.key))
+    : serviceCards;
 
   return (
     <section

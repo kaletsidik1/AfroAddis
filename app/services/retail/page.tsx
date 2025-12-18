@@ -2,8 +2,7 @@ const sections = [
   {
     id: "retail",
     title: "Household Retail & Credit",
-    lead:
-      "Nationwide retail and wholesale programs for appliances, electronics, and household goods with flexible credit and field activation support.",
+    lead: "Nationwide retail and wholesale programs for appliances, electronics, and household goods with flexible credit and field activation support.",
     points: [
       "Credit-enabled sales with partner banks plus collections discipline that keeps sell-through healthy.",
       "Store activation playbooks: planograms, POP kits, and field audits to keep assortments productive.",
@@ -25,8 +24,7 @@ const sections = [
   {
     id: "partnerships",
     title: "Strategic Partnership Programs",
-    lead:
-      "Structured partner tracks for dealers, distributors, and co-branded activations that accelerate market entry and growth.",
+    lead: "Structured partner tracks for dealers, distributors, and co-branded activations that accelerate market entry and growth.",
     points: [
       "Tiered partner benefits: margin protection, MDF, training, and joint marketing calendars.",
       "Assortment curation and logistics SLAs so partners can commit with confidence.",
@@ -48,8 +46,7 @@ const sections = [
   {
     id: "support",
     title: "After-Sales Support Services",
-    lead:
-      "Warranty, service centers, and spare-parts logistics to keep products running reliably for consumers and institutional buyers.",
+    lead: "Warranty, service centers, and spare-parts logistics to keep products running reliably for consumers and institutional buyers.",
     points: [
       "Service hubs and mobile technicians with SLAs that match product category expectations.",
       "Spare-parts planning by SKU velocity; reverse logistics to keep turnaround predictable.",
@@ -82,11 +79,16 @@ export default function RetailServicesPage() {
   return (
     <div className="space-y-12 px-4 pb-24 pt-14 sm:px-8 lg:px-16 bg-[radial-gradient(circle_at_12%_18%,rgba(255,255,255,0.7),transparent_35%),radial-gradient(circle_at_88%_12%,rgba(219,234,254,0.55),transparent_32%)]">
       <header className="mx-auto max-w-5xl text-center space-y-3">
-        <p className="text-sm uppercase tracking-[0.25em] text-amber-700">Retail & Consumer Solutions</p>
-        <h1 className="text-4xl font-semibold text-gray-900 sm:text-5xl">Retail, Partnerships, After-Sales</h1>
+        <p className="text-sm uppercase tracking-[0.25em] text-amber-700">
+          Retail & Consumer Solutions
+        </p>
+        <h1 className="text-4xl font-semibold text-gray-900 sm:text-5xl">
+          Retail, Partnerships, After-Sales
+        </h1>
         <p className="text-lg text-gray-700">
-          Deep coverage across retail execution, dealer partnerships, and after-sales services. These sections expand on the
-          Retail column from the Services menu with anchor links for quick navigation.
+          Deep coverage across retail execution, dealer partnerships, and
+          after-sales services. These sections expand on the Retail column from
+          the Services menu with anchor links for quick navigation.
         </p>
       </header>
 
@@ -113,12 +115,20 @@ export default function RetailServicesPage() {
               <div className="p-6 sm:p-8 space-y-4">
                 <div className="flex flex-wrap items-center justify-between gap-3">
                   <div>
-                    <p className="text-xs uppercase tracking-[0.3em] text-amber-700">Retail column</p>
-                    <h2 className="mt-2 text-2xl font-bold text-gray-900">{section.title}</h2>
+                    <p className="text-xs uppercase tracking-[0.3em] text-amber-700">
+                      Retail column
+                    </p>
+                    <h2 className="mt-2 text-2xl font-bold text-gray-900">
+                      {section.title}
+                    </h2>
                   </div>
                   <div className="flex flex-wrap gap-2">
                     {section.bullets.map((b) => (
-                      <StatPill key={`${section.id}-${b.label}`} label={b.label} value={b.value} />
+                      <StatPill
+                        key={`${section.id}-${b.label}`}
+                        label={b.label}
+                        value={b.value}
+                      />
                     ))}
                   </div>
                 </div>
@@ -128,7 +138,10 @@ export default function RetailServicesPage() {
                 <ul className="space-y-2 text-sm text-gray-700">
                   {section.points.map((p, i) => (
                     <li key={`${section.id}-pt-${i}`} className="flex gap-2">
-                      <span className="mt-1 h-1.5 w-1.5 rounded-full bg-amber-700" aria-hidden="true" />
+                      <span
+                        className="mt-1 h-1.5 w-1.5 rounded-full bg-amber-700"
+                        aria-hidden="true"
+                      />
                       <span>{p}</span>
                     </li>
                   ))}
@@ -142,7 +155,10 @@ export default function RetailServicesPage() {
               </div>
 
               <div className="relative h-full min-h-[260px] bg-gray-50">
-                <div className="absolute inset-0 bg-gradient-to-br from-black/20 via-transparent to-blue-900/10" aria-hidden="true" />
+                <div
+                  className="absolute inset-0 bg-gradient-to-br from-black/20 via-transparent to-blue-900/10"
+                  aria-hidden="true"
+                />
                 <img
                   src={section.image}
                   alt={`${section.title} illustrative`}
