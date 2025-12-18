@@ -200,11 +200,8 @@ export function AboutSection() {
                     sizes="(min-width: 1024px) 50vw, 100vw"
                     priority={index === 0}
                   />
-                  <div className="absolute inset-0 bg-gradient-to-t from-slate-900/40 to-transparent" />
+                  <div className="absolute inset-0 bg-linear-to-t from-slate-900/40 to-transparent" />
                   <div className="absolute bottom-6 left-6 text-white">
-                    <p className="text-sm font-medium opacity-90">
-                      {image.caption}
-                    </p>
                     <p className="text-sm font-medium opacity-90">
                       {image.caption}
                     </p>

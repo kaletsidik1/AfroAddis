@@ -101,7 +101,7 @@ export function ContactSection() {
               sizes="(min-width: 768px) 30vw, 100vw"
               className="object-cover "
             />
-            <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-black/10 to-transparent" />
+            <div className="absolute inset-0 bg-linear-to-t from-black/60 via-black/10 to-transparent" />
             <div className="absolute bottom-0 p-6 text-white">
               <p className="text-xs uppercase tracking-widest text-white/70">
                 Addis Ababa
