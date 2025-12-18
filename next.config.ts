@@ -2,7 +2,6 @@ import type { NextConfig } from "next";
 import path from "node:path";
 
 // Note: `turbopack` config is currently not typed in NextConfig.
-// @ts-expect-error - turbopack config
 const nextConfig: NextConfig = {
   turbopack: {
     resolveAlias: {
