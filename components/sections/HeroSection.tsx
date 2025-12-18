@@ -1,5 +1,6 @@
 import Image from "next/image";
 import Link from "next/link";
+import { Plane } from "lucide-react";
 
 const trustBadges = [
   "AEO Accreditation · In Progress",
@@ -15,13 +16,25 @@ const stats = [
   { value: "8", label: "Global trade routes" },
 ];
 
-const tradeDestinations = ["France", "Turkey", "China", "UAE", "Germany", "Korea", "Italy", "Spain"];
+const tradeDestinations = [
+  "France",
+  "Turkey",
+  "China",
+  "UAE",
+  "Germany",
+  "Korea",
+  "Italy",
+  "Spain",
+];
 
 export function HeroSection() {
   return (
-    <section id="top" className="relative overflow-hidden bg-[#0f172a] text-white shadow-2xl shadow-emerald-900/20">
+    <section
+      id="top"
+      className="relative overflow-hidden bg-[#0f172a] text-white shadow-2xl shadow-emerald-900/20"
+    >
       <div className="absolute inset-0 opacity-70">
-        <div className="absolute inset-0 bg-[radial-gradient(circle_at_top,_rgba(236,187,82,0.25),_transparent_50%),_radial-gradient(circle_at_bottom,_rgba(16,185,129,0.2),_transparent_50%)]" />
+        <div className="absolute inset-0 bg-[radial-gradient(circle_at_top,rgba(236,187,82,0.25),transparent_50%),radial-gradient(circle_at_bottom,rgba(16,185,129,0.2),transparent_50%)]" />
         <div className="hero-carousel absolute inset-0 mix-blend-soft-light">
           {[
             "https://images.unsplash.com/photo-1469474968028-56623f02e42e?auto=format&fit=crop&w=1600&q=80",
@@ -51,11 +64,12 @@ export function HeroSection() {
               Transforming Trade, Manufacturing, and Export for a Better Future
             </h1>
             <p className="max-w-2xl text-base text-gray-100 font-sans sm:text-lg">
-                A multi-sector enterprise transforming Ethiopia’s economy through 
-                advanced trading and retail systems, flexible credit access, global standard
-                 import and export operations, and high-quality local manufacturing all
-                  delivered with strong governance and international partnerships.  
-                </p>
+              A multi-sector enterprise transforming Ethiopia’s economy through
+              advanced trading and retail systems, flexible credit access,
+              global standard import and export operations, and high-quality
+              local manufacturing all delivered with strong governance and
+              international partnerships.
+            </p>
           </div>
 
           <div className="flex flex-wrap gap-2">
@@ -88,7 +102,9 @@ export function HeroSection() {
             {stats.map((stat) => (
               <div key={stat.label}>
                 <dt className=" uppercase  text-white">{stat.label}</dt>
-                <dd className="mt-2 text-2xl font-semibold text-white">{stat.value}</dd>
+                <dd className="mt-2 text-2xl font-semibold text-white">
+                  {stat.value}
+                </dd>
               </div>
             ))}
           </dl>
@@ -98,13 +114,16 @@ export function HeroSection() {
           <div className="relative overflow-hidden border border-white/10 bg-white/5 p-5 backdrop-blur">
             <div className="grid gap-3 sm:grid-cols-2">
               {[
-                                "https://images.unsplash.com/photo-1469474968028-56623f02e42e?auto=format&fit=crop&w=800&q=80",
+                "https://images.unsplash.com/photo-1469474968028-56623f02e42e?auto=format&fit=crop&w=800&q=80",
 
                 "https://images.unsplash.com/photo-1469474968028-56623f02e42e?auto=format&fit=crop&w=800&q=80",
                 "https://images.unsplash.com/photo-1470337458703-46ad1756a187?auto=format&fit=crop&w=800&q=80",
                 "https://images.unsplash.com/photo-1500530855697-b586d89ba3ee?auto=format&fit=crop&w=800&q=80",
               ].map((src, index) => (
-                <div key={index} className="group relative h-40 overflow-hidden border border-white/10">
+                <div
+                  key={index}
+                  className="group relative h-40 overflow-hidden border border-white/10"
+                >
                   <Image
                     src={src}
                     alt={`Hero collage ${index}`}
@@ -117,31 +136,44 @@ export function HeroSection() {
               ))}
             </div>
             <div className="mt-4 border border-white/10 bg-white/5 p-4">
-              <p className="text-xs uppercase tracking-[0.3em] text-white/70">Integrated capability</p>
-              <p className="mt-2 text-sm text-white/90">Trading · Import & retail · Manufacturing · Global logistics</p>
+              <p className="text-xs uppercase tracking-[0.3em] text-white/70">
+                Integrated capability
+              </p>
+              <p className="mt-2 text-sm text-white/90">
+                Trading · Import & retail · Manufacturing · Global logistics
+              </p>
             </div>
           </div>
 
-          <div className="relative overflow-hidden rounded-[30px] border border-white/10 bg-[#020817] p-6">
+          <div className="relative overflow-hidden rounded border border-white/10 bg-[#040f2a] p-6">
             <div className="space-y-3">
-              <p className="text-xs uppercase tracking-[0.35em] text-white/60">Global trade routes</p>
-              <p className="text-base text-white/90">Addis Ababa → Key international partners</p>
+              <p className="text-xs uppercase tracking-[0.35em] text-white/60">
+                Global trade routes
+              </p>
+              <p className="text-base text-white/90">
+                Addis Ababa → Key international partners
+              </p>
             </div>
             <div className="relative mt-6">
-              <div className="h-48 w-full rounded-2xl bg-linear-to-br from-slate-900 to-slate-800">
+              <div className="h-48 w-full rounded-2xl ">
                 <div className="absolute inset-0 opacity-50">
                   <div className="absolute inset-0 bg-[url('https://upload.wikimedia.org/wikipedia/commons/thumb/5/5f/BlankMap-World.svg/1024px-BlankMap-World.svg.png')] bg-contain bg-center bg-no-repeat invert" />
                 </div>
                 <div className="relative flex h-full flex-col justify-between p-4 text-xs text-white/80">
                   {tradeDestinations.map((destination) => (
-                    <div key={destination} className="flex items-center justify-between border-b border-white/10 py-1 last:border-none">
+                    <div
+                      key={destination}
+                      className="flex items-center justify-between border-b border-white/10 py-1 last:border-none"
+                    >
                       <span>{destination}</span>
-                      <span className="text-white/60">In transit</span>
+                      <span>
+                        <Plane width={16} height={16} />
+                      </span>
                     </div>
                   ))}
                 </div>
               </div>
-              <div className="absolute -bottom-5 left-1/2 w-40 -translate-x-1/2 rounded-full border border-white/20 bg-white/10 px-4 py-2 text-center text-xs font-semibold text-white/80 backdrop-blur">
+              <div className="absolute bottom-44 left-1/2 w-40 -translate-x-1/2 rounded-full border border-white/20 bg-white/10 px-4 py-2 text-center text-xs font-semibold text-white/80 backdrop-blur">
                 Addis Ababa HQ · Bole
               </div>
             </div>
