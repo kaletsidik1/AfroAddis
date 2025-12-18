@@ -6,12 +6,12 @@ const sections = [
     id: "timeline",
     title: "Corporate timeline",
     lead: "Milestones and expansion phases from founding through export growth, manufacturing, and new initiatives.",
-        lead: "Key milestones from founding through export growth, manufacturing, and new initiatives.",
-        points: [
-          "2015: Founded KYT Trading PLC (AFROADDIS) focused on import and trading.",
-          "2018–2020: Expanded into coffee, sesame, pulses export; secured ECX seat.",
-          "2021–2024: Launched manufacturing lines, strengthened retail credit, initiated mining/assembly pilots.",
-        ],
+    lead: "Key milestones from founding through export growth, manufacturing, and new initiatives.",
+    points: [
+      "2015: Founded KYT Trading PLC (AFROADDIS) focused on import and trading.",
+      "2018–2020: Expanded into coffee, sesame, pulses export; secured ECX seat.",
+      "2021–2024: Launched manufacturing lines, strengthened retail credit, initiated mining/assembly pilots.",
+    ],
     image:
       "https://images.unsplash.com/photo-1528825871115-3581a5387919?auto=format&fit=crop&w=1600&q=80",
   },
