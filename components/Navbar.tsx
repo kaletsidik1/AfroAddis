@@ -61,6 +61,18 @@ export function Navbar() {
     };
   }, [mobileNavOpen]);
 
+  const scrollToHash = (href: string) => {
+    const hash = href.includes("#") ? href.split("#")[1] : "";
+    if (!hash) return false;
+    const el = document.getElementById(hash);
+    if (el) {
+      el.scrollIntoView({ behavior: "smooth", block: "start" });
+      window.history.pushState(null, "", `#${hash}`);
+      return true;
+    }
+    return false;
+  };
+
   const headerClasses = isMagazine
     ? "relative z-50 border-b border-gray-300 bg-white"
     : "fixed inset-x-0 top-0 z-50 border-b border-gray-300 bg-white/95 backdrop-blur-xl";
@@ -101,6 +113,11 @@ export function Navbar() {
                   <Link
                     key={group.label}
                     href={group.href ?? "/"}
+                    onClick={(e) => {
+                      if (group.href && scrollToHash(group.href)) {
+                        e.preventDefault();
+                      }
+                    }}
                     className="inline-flex items-center gap-1 rounded-full px-3 py-2 text-gray-700 transition hover:bg-gray-50 hover:text-gray-900"
                   >
                     {group.label}
@@ -201,6 +218,11 @@ export function Navbar() {
               <Link
                 key={link.href}
                 href={link.href}
+                onClick={(e) => {
+                  if (scrollToHash(link.href)) {
+                    e.preventDefault();
+                  }
+                }}
                 className="text-sm font-semibold text-gray-900"
               >
                 {link.label}
@@ -302,7 +324,10 @@ export function Navbar() {
                             key={item.label}
                             href={item.href}
                             className="block rounded-xl px-3 py-2 text-gray-700 hover:bg-gray-50"
-                            onClick={() => setMobileNavOpen(false)}
+                            onClick={(e) => {
+                              if (scrollToHash(item.href)) e.preventDefault();
+                              setMobileNavOpen(false);
+                            }}
                           >
                             {item.label}
                           </Link>
@@ -318,7 +343,10 @@ export function Navbar() {
                     key={link.href}
                     href={link.href}
                     className="block rounded-xl border border-gray-200 px-3 py-2 text-center font-semibold text-gray-900"
-                    onClick={() => setMobileNavOpen(false)}
+                    onClick={(e) => {
+                      if (scrollToHash(link.href)) e.preventDefault();
+                      setMobileNavOpen(false);
+                    }}
                   >
                     {link.label}
                   </Link>
