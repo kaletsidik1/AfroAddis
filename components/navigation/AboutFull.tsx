@@ -1,11 +1,6 @@
 "use client";
-
 import React, { useEffect, useMemo, useRef, useState } from "react";
-import Link from "next/link";
 import { megaMenuGroups } from "@/components/navigation/menuConfig";
-
-// Single-file About subnav + sections. Click a subnav item to scroll to
-// the corresponding section and update URL hash. Highlights active item.
 
 export default function AboutFull() {
   const group = useMemo(
@@ -22,12 +17,10 @@ export default function AboutFull() {
     "Achievements & awards": "achievements",
     "Corporate timeline": "timeline",
     "News & updates": "news",
-    "News & update": "news",
-    Resources: "resources",
+    "Resources": "resources",
   };
 
-  // Use a fixed ordered list for the About subnav so clicking always
-  // navigates to the corresponding section in this page.
+  // Use a fixed ordered list for the About subnav
   const items = useMemo(
     () => [
       { label: "Company profile", id: labelToId["Company profile"] },
@@ -36,9 +29,9 @@ export default function AboutFull() {
         label: "Achievements & awards",
         id: labelToId["Achievements & awards"],
       },
-      { label: "Resources", id: labelToId["Resources"] },
       { label: "Corporate timeline", id: labelToId["Corporate timeline"] },
       { label: "News & updates", id: labelToId["News & updates"] },
+      { label: "Resources", id: labelToId["Resources"] },
     ],
     []
   );
@@ -55,17 +48,16 @@ export default function AboutFull() {
 
     const obs = new IntersectionObserver(
       (entries) => {
-        const visible = entries
-          .filter((e) => e.isIntersecting)
-          .sort((a, b) => b.intersectionRatio - a.intersectionRatio);
-        if (visible.length > 0) {
-          setActiveId(visible[0].target.id);
-        }
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            setActiveId(entry.target.id);
+          }
+        });
       },
       {
         root: null,
-        rootMargin: "-20% 0px -60% 0px",
-        threshold: [0.1, 0.25, 0.5],
+        rootMargin: "-20% 0px -60% 0px", // Adjust these values as needed
+        threshold: 0.1, // Simpler threshold
       }
     );
 
@@ -75,34 +67,50 @@ export default function AboutFull() {
     return () => obs.disconnect();
   }, [items]);
 
+  // Set initial activeId based on URL hash on mount
   useEffect(() => {
-    // If the URL has a hash on mount, scroll to it
     const hash =
       typeof window !== "undefined"
         ? window.location.hash.replace("#", "")
         : "";
-    if (hash) {
-      const el = document.getElementById(hash);
-      if (el) el.scrollIntoView({ behavior: "smooth", block: "start" });
+
+    // If there's a hash in URL, set it as active
+    if (hash && items.some((item) => item.id === hash)) {
+      setActiveId(hash);
+      // Scroll to element after a small delay to ensure DOM is ready
+      setTimeout(() => {
+        const el = document.getElementById(hash);
+        if (el) {
+          el.scrollIntoView({ behavior: "smooth", block: "start" });
+        }
+      }, 100);
+    } else {
+      // Default to first section if no hash
+      setActiveId(items[0]?.id || null);
     }
-  }, []);
+  }, [items]);
 
   const handleClick = (e: React.MouseEvent, id: string) => {
     e.preventDefault();
     const el = document.getElementById(id);
     if (el) {
-      el.scrollIntoView({ behavior: "smooth", block: "start" });
-      // update hash without jumping
-      if (typeof window !== "undefined")
-        window.history.pushState(null, "", `#${id}`);
+      // Update active ID immediately for better UX
       setActiveId(id);
+
+      // Update URL hash without jumping
+      if (typeof window !== "undefined") {
+        window.history.pushState(null, "", `#${id}`);
+      }
+
+      // Scroll to element
+      el.scrollIntoView({ behavior: "smooth", block: "start" });
     }
   };
 
   if (!group) return null;
 
   return (
-    <div className="w-full bg-white">
+    <div className="w-full bg-white/90">
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
         <div className="flex flex-col gap-6 py-6">
           {/* Subnav */}
@@ -113,9 +121,8 @@ export default function AboutFull() {
                 aria-label="About sub navigation"
               >
                 {items.map((item) => (
-                  <a
+                  <button
                     key={item.id}
-                    href={`#${item.id}`}
                     onClick={(e) => handleClick(e, item.id)}
                     className={`whitespace-nowrap rounded-full px-4 py-2 text-sm font-medium transition ${
                       activeId === item.id
@@ -124,13 +131,13 @@ export default function AboutFull() {
                     }`}
                   >
                     {item.label}
-                  </a>
+                  </button>
                 ))}
               </nav>
             </div>
           </div>
 
-          {/* Sections */}
+          {/* Rest of your sections remain the same */}
           <div className="space-y-12">
             <section id="company" className="prose max-w-none">
               <h2>Company profile</h2>
@@ -166,7 +173,28 @@ export default function AboutFull() {
                 strategy, capital allocation, and risk. Audit and risk functions
                 enforce policies for procurement, FX, logistics, and operational
                 controls, with periodic audits and SOPs for quality and
-                documentation.
+                documentation. Governance is structured with board and advisory
+                oversight on strategy, capital allocation, and risk. Audit and
+                risk functions enforce policies for procurement, FX, logistics,
+                and operational controls, with periodic audits and SOPs for
+                quality and documentation. Governance is structured with board
+                and advisory oversight on strategy, capital allocation, and
+                risk. Audit and risk functions enforce policies for procurement,
+                FX, logistics, and operational controls, with periodic audits
+                and SOPs for quality and documentation. Governance is structured
+                with board and advisory oversight on strategy, capital
+                allocation, and risk. Audit and risk functions enforce policies
+                for procurement, FX, logistics, and operational controls, with
+                periodic audits and SOPs for quality and documentation.
+                Governance is structured with board and advisory oversight on
+                strategy, capital allocation, and risk. Audit and risk functions
+                enforce policies for procurement, FX, logistics, and operational
+                controls, with periodic audits and SOPs for quality and
+                documentation. Governance is structured with board and advisory
+                oversight on strategy, capital allocation, and risk. Audit and
+                risk functions enforce policies for procurement, FX, logistics,
+                and operational controls, with periodic audits and SOPs for
+                quality and documentation.
               </p>
               <ul className="text-gray-700">
                 <li>
@@ -189,7 +217,16 @@ export default function AboutFull() {
               <ul className="text-gray-700">
                 <li>
                   Best Taxpayer Award for transparent reporting and compliant
-                  trade operations.
+                  trade operations. Best Taxpayer Award for transparent
+                  reporting and compliant trade operations. Best Taxpayer Award
+                  for transparent reporting and compliant trade operations. Best
+                  Taxpayer Award for transparent reporting and compliant trade
+                  operations. Best Taxpayer Award for transparent reporting and
+                  compliant trade operations. Best Taxpayer Award for
+                  transparent reporting and compliant trade operations. Best
+                  Taxpayer Award for transparent reporting and compliant trade
+                  operations. Best Taxpayer Award for transparent reporting and
+                  compliant trade operations.
                 </li>
                 <li>
                   Active member of Addis Ababa Chamber of Commerce and sector
@@ -238,6 +275,7 @@ export default function AboutFull() {
                 </li>
               </ul>
             </section>
+
             <section id="resources" className="prose max-w-none">
               <h2>Resources</h2>
               <ul className="text-gray-700">

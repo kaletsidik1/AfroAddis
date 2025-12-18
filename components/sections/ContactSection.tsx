@@ -4,7 +4,7 @@ export function ContactSection() {
   return (
     <section
       id="contact"
-      className="py-20 space-y-16 bg-gradient-to-b from-white to-gray-50"
+      className="py-20 space-y-16 bg-linear-to-b from-white to-gray-50"
     >
       <div className="space-y-4 text-center">
         <p className="text-xs uppercase tracking-widest text-gray-500">

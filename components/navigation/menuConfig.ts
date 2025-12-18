@@ -26,21 +26,21 @@ export const megaMenuGroups: MegaMenuGroup[] = [
     label: "About",
     href: "/about",
     columns: [
-      {
-        title: "Company",
-        items: [
-          { label: "Company profile", href: "/about#company" },
-          { label: "Governance & board", href: "/about#governance" },
-          { label: "Achievements & awards", href: "/about#achievements" },
-        ],
-      },
-      {
-        title: "Resources",
-        items: [
-          { label: "Corporate timeline", href: "/about#timeline" },
-          { label: "News & updates", href: "/about#news" },
-        ],
-      },
+      // {
+      //   title: "Company",
+      //   items: [
+      //     { label: "Company profile", href: "/about#company" },
+      //     { label: "Governance & board", href: "/about#governance" },
+      //     { label: "Achievements & awards", href: "/about#achievements" },
+      //   ],
+      // },
+      // {
+      //   title: "Resources",
+      //   items: [
+      //     { label: "Corporate timeline", href: "/about#timeline" },
+      //     { label: "News & updates", href: "/about#news" },
+      //   ],
+      // },
     ],
   },
   {

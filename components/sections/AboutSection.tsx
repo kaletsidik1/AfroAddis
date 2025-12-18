@@ -122,7 +122,7 @@ export function AboutSection() {
           {/* Left Column - Content & Main Image Slider */}
           <div className="space-y-8">
             <div className="space-y-6">
-              <p className="text-lg leading-relaxed text-slate-700 text-justify break-words whitespace-normal">
+              <p className="text-lg leading-relaxed text-slate-700 text-justify wrap-break-word whitespace-normal">
                 KYT Trading Pvt. Ltd. Company, whose trade name is AFROADDIS, is
                 a rapidly growing commercial enterprise owned and run by a team
                 of former diaspora executives. It has been operational since
@@ -145,7 +145,7 @@ export function AboutSection() {
                 to delivering high-quality and sustainable products and services
                 that meet customer needs and contribute to national development.
               </p>
-              <p className="text-lg leading-relaxed text-slate-700 text-justify break-words whitespace-normal">
+              <p className="text-lg leading-relaxed text-slate-700 text-justify wrap-break-word whitespace-normal">
                 Our strategy is to position ourselves as a group that is trusted
                 for top-quality products and customized service. We place
                 special emphasis towards building long term relationships. We
@@ -230,7 +230,7 @@ export function AboutSection() {
           <div className="space-y-6">
             {/* Single Operation Image (Quality Assurance Centers) */}
             <div className=" overflow-hidden bg-white shadow-sm">
-              <div className="relative h-96 sm:h-[28rem] w-full">
+              <div className="relative h-96 sm:h-112 w-full">
                 <Image
                   src={featuredImages[1].src}
                   alt={featuredImages[1].caption}
@@ -238,7 +238,7 @@ export function AboutSection() {
                   className="object-cover"
                   sizes="(min-width: 1024px) 50vw, 100vw"
                 />
-                <div className="absolute inset-0 bg-gradient-to-t from-slate-900/30 to-transparent" />
+                <div className="absolute inset-0 bg-linear-to-t from-slate-900/30 to-transparent" />
                 <div className="absolute bottom-4 left-4 text-white">
                   <p className="text-sm font-medium opacity-90">
                     {featuredImages[1].caption}
@@ -254,7 +254,7 @@ export function AboutSection() {
                   className="group relative overflow-hidden rounded-2xl bg-white shadow-sm transition-all duration-300 hover:shadow-md"
                 >
                   <div className="flex h-48">
-                    <div className="relative h-full w-40 flex-shrink-0">
+                    <div className="relative h-full w-40 shrink-0">
                       <Image
                         src={highlight.src}
                         alt={highlight.caption}
@@ -341,7 +341,7 @@ export function AboutSection() {
 
         {/* Bottom Accent */}
         <div className="mt-12 flex justify-center">
-          <div className="h-0.5 w-24 bg-gradient-to-r from-transparent via-slate-400 to-transparent" />
+          <div className="h-0.5 w-24 bg-linear-to-r from-transparent via-slate-400 to-transparent" />
         </div>
       </div>
     </section>

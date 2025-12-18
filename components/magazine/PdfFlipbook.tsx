@@ -127,13 +127,13 @@ export default function PdfFlipbook({
       {loading && (
         <div className="mx-auto mt-2 max-w-5xl overflow-hidden rounded-2xl border border-gray-200 bg-white/80 p-6 shadow-sm">
           <div
-            className="absolute inset-0 bg-gradient-to-br from-red-50/70 via-white to-red-100/60 opacity-70"
+            className="absolute inset-0 bg-linear-to-br from-red-50/70 via-white to-red-100/60 opacity-70"
             aria-hidden="true"
           />
           <div className="relative space-y-4">
             <div className="h-4 w-32 rounded-full bg-gray-200/70 animate-pulse" />
             <div className="h-3 w-56 rounded-full bg-gray-200/70 animate-pulse" />
-            <div className="aspect-[3/4] w-full max-w-4xl self-center overflow-hidden rounded-xl border border-gray-200 bg-gradient-to-br from-gray-50 via-white to-gray-100 shadow-inner">
+            <div className="aspect-3/4 w-full max-w-4xl self-center overflow-hidden rounded-xl border border-gray-200 bg-linear-to-br from-gray-50 via-white to-gray-100 shadow-inner">
               <div className="flex h-full items-center justify-center gap-2 text-sm font-semibold text-gray-500">
                 <svg
                   className="h-5 w-5 animate-spin text-red-600"

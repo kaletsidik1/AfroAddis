@@ -56,7 +56,7 @@ export function MagazineCoverThumb({
   }, [pdfUrl, scale]);
 
   return (
-    <div className="aspect-[3/4] w-full bg-gray-100">
+    <div className="aspect-3/4 w-full bg-gray-100">
       {src ? (
         <img
           src={src}
@@ -65,7 +65,7 @@ export function MagazineCoverThumb({
           loading="lazy"
         />
       ) : error ? (
-        <div className="flex h-full w-full items-center justify-center bg-gradient-to-br from-red-100 to-orange-100 px-3 text-center text-xs font-semibold text-red-800">
+        <div className="flex h-full w-full items-center justify-center bg-linear-to-br from-red-100 to-orange-100 px-3 text-center text-xs font-semibold text-red-800">
           {title}
         </div>
       ) : (
