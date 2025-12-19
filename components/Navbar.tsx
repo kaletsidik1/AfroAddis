@@ -74,7 +74,8 @@ export function Navbar() {
     // Determine the target path for the hash
     // - Plain "#section" or empty pathPart means current page
     // - Otherwise, use the explicit pathPart
-    const targetPath = pathPart === "" || href.startsWith("#") ? pathname : pathPart;
+    const targetPath =
+      pathPart === "" || href.startsWith("#") ? pathname : pathPart;
 
     // Only perform in-page scroll when targetPath matches the current pathname
     if (targetPath !== pathname) return false;
