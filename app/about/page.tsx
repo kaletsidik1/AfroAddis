@@ -49,7 +49,7 @@ export default function AboutPage() {
                 sizes="(min-width:640px) 50vw, 100vw"
                 priority
               />
-              <div className="absolute inset-0 bg-gradient-to-tr from-black/30 via-transparent to-red-900/10" />
+              <div className="absolute inset-0 bg-linear-to-tr from-black/30 via-transparent to-red-900/10" />
             </div>
             <div className="p-6">
               <h2 className="text-2xl font-bold text-gray-900">{card.title}</h2>

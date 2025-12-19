@@ -110,7 +110,7 @@ export const serviceCards = [
     description:
       "Early-stage mining concessions and feasibility programs with partners for exploration, offtake, and project finance.",
     images: [
-      "https://images.unsplash.com/photo-1508387024700-9fe5c0b37f79?auto=format&fit=crop&w=1200&q=80",
+      "https://images.unsplash.com/photo-1502086223501-7ea6ecd79368?auto=format&fit=crop&w=1200&q=80",
       "https://images.unsplash.com/photo-1502086223501-7ea6ecd79368?auto=format&fit=crop&w=1200&q=80",
     ],
     overlay: "from-gray-900/80 via-amber-800/50 to-amber-500/30",

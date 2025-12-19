@@ -62,8 +62,23 @@ export function Navbar() {
   }, [mobileNavOpen]);
 
   const scrollToHash = (href: string) => {
-    const hash = href.includes("#") ? href.split("#")[1] : "";
+    // Only intercept and smooth-scroll when the hash target is on the current page.
+    // If the href points to a different route (e.g. "/services/core#trading"), let Next.js navigate.
+    const hasHash = href.includes("#");
+    if (!hasHash) return false;
+
+    const [pathPart, hashPart] = href.split("#");
+    const hash = hashPart ?? "";
     if (!hash) return false;
+
+    // Determine the target path for the hash
+    // - Plain "#section" or empty pathPart means current page
+    // - Otherwise, use the explicit pathPart
+    const targetPath = pathPart === "" || href.startsWith("#") ? pathname : pathPart;
+
+    // Only perform in-page scroll when targetPath matches the current pathname
+    if (targetPath !== pathname) return false;
+
     const el = document.getElementById(hash);
     if (el) {
       el.scrollIntoView({ behavior: "smooth", block: "start" });

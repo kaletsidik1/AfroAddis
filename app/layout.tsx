@@ -1,7 +1,15 @@
 import type { Metadata } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
 import Link from "next/link";
-import { Mail, Phone, MapPin, FileText, Linkedin, Twitter, Facebook } from "lucide-react";
+import {
+  Mail,
+  Phone,
+  MapPin,
+  FileText,
+  Linkedin,
+  Twitter,
+  Facebook,
+} from "lucide-react";
 import "./globals.css";
 import { Navbar } from "@/components/Navbar";
 
@@ -28,11 +36,11 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body
-        className={`${geistSans.variable} ${geistMono.variable} antialiased bg-[#f7f4ed] text-gray-900`}
+        className={`${geistSans.variable} ${geistMono.variable} antialiased bg-[#f7f4ed] text-gray-900 `}
       >
         <Navbar />
 
-        <main className="mx-auto max-w-7xl space-y-20 px-4 pb-16 pt-28 sm:px-6 lg:px-10">
+        <main className=" pb-16 pt-28 sm:px-6 lg:px-10">
           {children}
         </main>
 
@@ -42,31 +50,72 @@ export default function RootLayout({
               <div className="space-y-4">
                 <p className="text-lg font-bold">Afro Addis</p>
                 <p className="max-w-sm text-sm text-red-100">
-                  A diversified Ethiopian group working across agro-commodities, imports, and furniture manufacturing.
+                  A diversified Ethiopian group working across agro-commodities,
+                  imports, and furniture manufacturing.
                 </p>
                 <div className="flex items-center gap-3 text-red-100">
-                  <a href="#" aria-label="LinkedIn" className="hover:text-white"><Linkedin size={18} /></a>
-                  <a href="#" aria-label="Twitter" className="hover:text-white"><Twitter size={18} /></a>
-                  <a href="#" aria-label="Facebook" className="hover:text-white"><Facebook size={18} /></a>
+                  <a
+                    href="#"
+                    aria-label="LinkedIn"
+                    className="hover:text-white"
+                  >
+                    <Linkedin size={18} />
+                  </a>
+                  <a href="#" aria-label="Twitter" className="hover:text-white">
+                    <Twitter size={18} />
+                  </a>
+                  <a
+                    href="#"
+                    aria-label="Facebook"
+                    className="hover:text-white"
+                  >
+                    <Facebook size={18} />
+                  </a>
                 </div>
               </div>
 
               <div>
-                <p className="text-xs font-semibold uppercase tracking-wide text-red-200">Quick links</p>
+                <p className="text-xs font-semibold uppercase tracking-wide text-red-200">
+                  Quick links
+                </p>
                 <ul className="mt-3 space-y-2 text-sm">
-                  <li><Link href="/about" className="hover:text-white">About</Link></li>
-                  <li><Link href="/services" className="hover:text-white">Services</Link></li>
-                  <li><Link href="/products" className="hover:text-white">Products</Link></li>
-                  <li><Link href="/work-with-us" className="hover:text-white">Work with us</Link></li>
+                  <li>
+                    <Link href="/about" className="hover:text-white">
+                      About
+                    </Link>
+                  </li>
+                  <li>
+                    <Link href="/services" className="hover:text-white">
+                      Services
+                    </Link>
+                  </li>
+                  <li>
+                    <Link href="/products" className="hover:text-white">
+                      Products
+                    </Link>
+                  </li>
+                  <li>
+                    <Link href="/work-with-us" className="hover:text-white">
+                      Work with us
+                    </Link>
+                  </li>
                 </ul>
               </div>
 
               <div>
-                <p className="text-xs font-semibold uppercase tracking-wide text-red-200">Contact</p>
+                <p className="text-xs font-semibold uppercase tracking-wide text-red-200">
+                  Contact
+                </p>
                 <ul className="mt-3 space-y-3 text-sm text-red-100">
-                  <li className="flex items-center gap-2"><Mail size={16} /> <span>info@afroaddis.com</span></li>
-                  <li className="flex items-center gap-2"><Phone size={16} /> <span>+251 (0) 11 000 0000</span></li>
-                  <li className="flex items-center gap-2"><MapPin size={16} /> <span>Addis Ababa, Ethiopia</span></li>
+                  <li className="flex items-center gap-2">
+                    <Mail size={16} /> <span>info@afroaddis.com</span>
+                  </li>
+                  <li className="flex items-center gap-2">
+                    <Phone size={16} /> <span>+251 (0) 11 000 0000</span>
+                  </li>
+                  <li className="flex items-center gap-2">
+                    <MapPin size={16} /> <span>Addis Ababa, Ethiopia</span>
+                  </li>
                 </ul>
 
                 <div className="mt-4">

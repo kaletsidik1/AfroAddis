@@ -178,7 +178,7 @@ export default function CoreServicesPage() {
 
               <div className="relative h-full min-h-[260px] bg-gray-50">
                 <div
-                  className="absolute inset-0 bg-gradient-to-br from-black/20 via-transparent to-amber-900/10"
+                  className="absolute inset-0 bg-linear-to-br from-black/20 via-transparent to-amber-900/10"
                   aria-hidden="true"
                 />
                 <img

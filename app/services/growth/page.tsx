@@ -14,7 +14,7 @@ const sections = [
       { label: "Partner pipeline", value: "8" },
     ],
     image:
-      "https://images.unsplash.com/photo-1508387024700-9fe5c0b37f79?auto=format&fit=crop&w=1600&q=80",
+      "https://images.unsplash.com/photo-1470337458703-46ad1756a187?auto=format&fit=crop&w=1600&q=80",
     details: [
       "Concession assessments with phased budgets; drill, assay, and lab partner coordination.",
       "Risk models covering logistics, compliance, and offtake certainty to inform capital stack.",
@@ -36,7 +36,7 @@ const sections = [
       { label: "Facility zones", value: "2" },
     ],
     image:
-      "https://images.unsplash.com/photo-1470337458703-46ad1756a187?auto=format&fit=crop&w=1600&q=80",
+      "https://images.unsplash.com/photo-1503389152951-9f343605f61e?auto=format&fit=crop&w=1600&q=80",
     details: [
       "Facility readiness: utilities, EHS, and logistics flows mapped to takt-time targets.",
       "Procurement and vendor QA for kits, tools, jigs, and test equipment.",
@@ -156,7 +156,7 @@ export default function StrategicGrowthServicesPage() {
 
               <div className="relative h-full min-h-[260px] bg-gray-50">
                 <div
-                  className="absolute inset-0 bg-gradient-to-br from-black/20 via-transparent to-slate-900/10"
+                  className="absolute inset-0 bg-linear-to-br from-black/20 via-transparent to-slate-900/10"
                   aria-hidden="true"
                 />
                 <img

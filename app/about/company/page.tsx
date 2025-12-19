@@ -36,7 +36,7 @@ const sections = [
       "Structured trade finance partnerships with leading Ethiopian banks.",
     ],
     image:
-      "https://images.unsplash.com/photo-1515165562835-c3b8c2a9fdee?auto=format&fit=crop&w=1600&q=80",
+      "https://images.unsplash.com/photo-1529333166437-7750a6dd5a70?auto=format&fit=crop&w=1600&q=80",
   },
   {
     id: "resources",
@@ -67,7 +67,7 @@ export default function AboutCompanyPage() {
               sizes="(min-width:1024px) 50vw, 100vw"
               priority
             />
-            <div className="absolute inset-0 bg-gradient-to-tr from-black/30 via-transparent to-red-900/10" />
+            <div className="absolute inset-0 bg-linear-to-tr from-black/30 via-transparent to-red-900/10" />
           </div>
           <div className="p-6 sm:p-8">
             <p className="text-xs uppercase tracking-[0.3em] text-red-700">
@@ -129,9 +129,9 @@ export default function AboutCompanyPage() {
                 </ul>
               </div>
 
-              <div className="relative h-full min-h-[240px] bg-gray-50">
+              <div className="relative h-full min-h-60 bg-gray-50">
                 <div
-                  className="absolute inset-0 bg-gradient-to-br from-black/20 via-transparent to-amber-900/10"
+                  className="absolute inset-0 bg-linear-to-br from-black/20 via-transparent to-amber-900/10"
                   aria-hidden="true"
                 />
                 <Image
