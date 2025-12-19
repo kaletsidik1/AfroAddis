@@ -153,29 +153,6 @@ export function AboutSection() {
                 future.
               </p>
 
-              <div className="mt-6">
-                <Link
-                  href="/contact"
-                  className="inline-flex items-center gap-2 rounded-md bg-red-600 px-4 py-2 text-sm font-medium text-white hover:bg-red-700 transition-colors"
-                  aria-label="See more about AfroAddis"
-                >
-                  <span>See more</span>
-                  <svg
-                    xmlns="http://www.w3.org/2000/svg"
-                    className="h-4 w-4"
-                    viewBox="0 0 24 24"
-                    fill="none"
-                    stroke="currentColor"
-                    strokeWidth="2"
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                    aria-hidden="true"
-                  >
-                    <path d="M5 12h14" />
-                    <path d="M12 5l7 7-7 7" />
-                  </svg>
-                </Link>
-              </div>
               <p className="text-lg leading-relaxed text-slate-700">
                 Our focus is on giving Ethiopian consumers access to reliable
                 products that meet international standards of quality, design,

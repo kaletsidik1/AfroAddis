@@ -110,12 +110,11 @@ export function HeroSection() {
           </dl>
         </div>
 
-        <div className="relative grid gap-5">
+        <div className="hidden sm:block relative  gap-5">
           <div className="relative overflow-hidden border border-white/10 bg-white/5 p-5 backdrop-blur">
             <div className="grid gap-3 sm:grid-cols-2">
               {[
                 "https://images.unsplash.com/photo-1469474968028-56623f02e42e?auto=format&fit=crop&w=800&q=80",
-
                 "https://images.unsplash.com/photo-1469474968028-56623f02e42e?auto=format&fit=crop&w=800&q=80",
                 "https://images.unsplash.com/photo-1470337458703-46ad1756a187?auto=format&fit=crop&w=800&q=80",
                 "https://images.unsplash.com/photo-1500530855697-b586d89ba3ee?auto=format&fit=crop&w=800&q=80",
@@ -131,7 +130,7 @@ export function HeroSection() {
                     className="object-cover transition-transform duration-700 group-hover:scale-105"
                     sizes="(min-width: 1024px) 20vw, 45vw"
                   />
-                  <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent transition-opacity duration-500 group-hover:opacity-70" />
+                  <div className="absolute inset-0 bg-linear-to-t from-black/60 via-transparent to-transparent transition-opacity duration-500 group-hover:opacity-70" />
                 </div>
               ))}
             </div>

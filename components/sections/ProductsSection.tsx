@@ -94,8 +94,8 @@ export function ProductsSection() {
         }
         startX = null;
       };
-      el.addEventListener("touchstart", onTouchStart);
-      el.addEventListener("touchend", onTouchEnd);
+      el.addEventListener("touchstart", onTouchStart, { passive: true });
+      el.addEventListener("touchend", onTouchEnd, { passive: true });
       return () => {
         el.removeEventListener("touchstart", onTouchStart);
         el.removeEventListener("touchend", onTouchEnd);
